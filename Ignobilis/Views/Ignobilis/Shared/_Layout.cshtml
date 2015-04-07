@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+@using EPiServer.Web.PageExtensions
+@model IPageViewModel<Ignobilis.Models.Pages.IB_BasePage>
+
+                         <html class="@String.Join(" ", IgnobilisService.Instance.Settings.CssClasses) @IgnobilisService.Instance.Settings.Functionality.Theme.Load(Model.SettingsPage)">
+                         <head>
+                             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                             <meta charset="utf-8" />
+                             <meta name="viewport" content="width=device-width, initial-scale=1" />
+                             @RenderSection("Head", required: false)
+
+                             @foreach (var cssPath in IgnobilisService.Instance.Settings.Paths.CssList)
+                             {
+                                 <link rel="stylesheet" href="@cssPath" />
+                             }
+                         </head>
+                         <body>
+                             @Html.RenderEPiServerQuickNavigator()
+
+                             @Html.Partial("~/Views/Ignobilis/Shared/Partials/_EventMessage.cshtml", Model.Profile.Group)
+
+                             <div class="wrapper">
+                                 <header>
+                                     <div id="logo">
+                                         <div class="helper">
+                                             <strong><a href="/">Tillbaka till start</a></strong>
+                                         </div>
+                                     </div>
+                                     @RenderSection("Header", false)
+
+                                     <div id="search">
+                                         <div class="column">
+                                             <div class="helper">
+                                                 @Html.PropertyFor(m => Model.SettingsPage.PersonalizationContentArea)
+                                             </div>
+                                         </div>
+                                         <div class="column">
+                                             <div class="helper">
+                                                 @Html.PropertyFor(m => Model.SettingsPage.SearchContentArea)
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </header>
+
+                                 @Html.Partial("~/Views/Ignobilis/Shared/Partials/_MainMenu.cshtml", Model)
+
+                                 @if (Model.SettingsPage.IsSecondaryMenuActive && IgnobilisService.Instance.Settings.Functionality.MainMenu.ActiveMenuItem != null)
+                                 {
+                                     @Html.Partial("~/Views/Ignobilis/Shared/Partials/_SecondaryMenu.cshtml", Model)
+                                 }
+
+                                 @if (Model.SettingsPage.IsBreadCrumbsActive)
+                                 {
+                                     @Html.Partial("~/Views/Ignobilis/Shared/Partials/_BreadCrumb.cshtml",
+                    IgnobilisService.Instance.Settings.Functionality.BreadCrumb.Load(Model.CurrentPage.PageLink))
+                                 }
+
+                                 @switch (IgnobilisService.Instance.Settings.Functionality.ViewMode.Load(Model.CurrentPage, Model.SettingsPage, HttpContext.Current))
+                                 {
+                                     case "1-column":
+                                         <section id="onecolumncontainer1">
+                                             <section id="column-1">
+                                                 <div class="helper">
+                                                     @Html.PropertyFor(m => Model.CurrentPage.ContentAreaE)
+                                                     @RenderBody()
+                                                     @Html.PropertyFor(m => Model.CurrentPage.ContentAreaA)
+                                                     @Html.Partial("~/Views/Ignobilis/Shared/Partials/_RecursiveMenu.cshtml", Model)
+                                                     @Html.PropertyFor(m => Model.CurrentPage.ContentAreaD)
+                                                     @Html.PropertyFor(m => Model.SettingsPage.PuffContentArea)
+                                                     @Html.PropertyFor(m => Model.CurrentPage.ContentAreaC)
+                                                     @Html.PropertyFor(m => Model.CurrentPage.ContentAreaB)
+                                                 </div>
+                                             </section>
+                                         </section>
+                                         break;
+                                     case "2-columns":
+                                     <section id="twocolumnscontainer2">
+                                         <section id="twocolumnscontainer1">
+                                             <section id="column-one">
+                                                 <div class="helper">
+                                                     @Html.Partial("~/Views/Ignobilis/Shared/Partials/_RecursiveMenu.cshtml", Model)
+                                                     @Html.PropertyFor(m => Model.CurrentPage.ContentAreaD)
+                                                     @Html.PropertyFor(m => Model.SettingsPage.PuffContentArea)
+                                                     @Html.PropertyFor(m => Model.CurrentPage.ContentAreaC)
+                                                     @Html.PropertyFor(m => Model.CurrentPage.ContentAreaB)
+                                                 </div>
+                                             </section>
+
+                                             <section id="column-two">
+                                                 <div class="helper">
+                                                     @Html.PropertyFor(m => Model.CurrentPage.ContentAreaE)
+                                                     @RenderBody()
+                                                     @Html.PropertyFor(m => Model.CurrentPage.ContentAreaA)
+                                                 </div>
+                                             </section>
+                                         </section>
+                                     </section>
+                                         break;
+                                     case "3-columns":
+                                     <section id="threecolumnscontainer3">
+                                         <section id="threecolumnscontainer2">
+                                             <section id="threecolumnscontainer1">
+                                                 <section id="column-one">
+                                                     <div class="helper">
+                                                         @Html.Partial("~/Views/Ignobilis/Shared/Partials/_RecursiveMenu.cshtml", Model)
+                                                         @Html.PropertyFor(m => Model.CurrentPage.ContentAreaD)
+                                                     </div>
+                                                 </section>
+
+                                                 <section id="column-two">
+                                                     <div class="helper">
+                                                         @Html.PropertyFor(m => Model.CurrentPage.ContentAreaE)
+                                                         @RenderBody()
+                                                         @Html.PropertyFor(m => Model.CurrentPage.ContentAreaA)
+                                                     </div>
+                                                 </section>
+
+                                                 <section id="column-three">
+                                                     <div class="helper">
+                                                         @Html.PropertyFor(m => Model.SettingsPage.PuffContentArea)
+                                                         @Html.PropertyFor(m => Model.CurrentPage.ContentAreaC)
+                                                         @Html.PropertyFor(m => Model.CurrentPage.ContentAreaB)
+                                                     </div>
+                                                 </section>
+                                             </section>
+                                         </section>
+                                     </section>
+                                         break;
+                                     case "4-columns":
+                                     <section id="fourcolumnscontainer4">
+                                         <section id="fourcolumnscontainer3">
+                                             <section id="fourcolumnscontainer2">
+                                                 <section id="fourcolumnscontainer1">
+                                                     <section id="column-one">
+                                                         <div class="helper">
+                                                             @Html.Partial("~/Views/Ignobilis/Shared/Partials/_RecursiveMenu.cshtml", Model)
+                                                             @Html.PropertyFor(m => Model.CurrentPage.ContentAreaD)
+                                                         </div>
+                                                     </section>
+
+                                                     <section id="column-two">
+                                                         <div class="helper">
+                                                             @Html.PropertyFor(m => Model.CurrentPage.ContentAreaE)
+                                                             @RenderBody()
+                                                             @Html.PropertyFor(m => Model.CurrentPage.ContentAreaA)
+                                                         </div>
+                                                     </section>
+
+                                                     <section id="column-three">
+                                                         <div class="helper">
+                                                             @Html.PropertyFor(m => Model.CurrentPage.ContentAreaB)
+                                                         </div>
+                                                     </section>
+
+                                                     <section id="column-four">
+                                                         <div class="helper">
+                                                             @Html.PropertyFor(m => Model.SettingsPage.PuffContentArea)
+                                                             @Html.PropertyFor(m => Model.CurrentPage.ContentAreaC)
+                                                         </div>
+                                                     </section>
+                                                 </section>
+                                             </section>
+                                         </section>
+                                     </section>
+                                         break;
+                                     case "flashy":
+                                     <section id="onecolumncontainer1">
+                                         <section id="column-1">
+                                             <div class="helper">
+                                                 @RenderBody()
+                                             </div>
+                                         </section>
+                                     </section>
+                                         break;
+                                     default:
+                                     <section id="onecolumncontainer1">
+                                         <section id="column-1">
+                                             <div class="helper">
+                                                 @Html.PropertyFor(m => Model.CurrentPage.ContentAreaE)
+                                                 @RenderBody()
+                                                 @Html.PropertyFor(m => Model.CurrentPage.ContentAreaA)
+                                                 @Html.Partial("~/Views/Ignobilis/Shared/Partials/_RecursiveMenu.cshtml", Model)
+                                                 @Html.PropertyFor(m => Model.CurrentPage.ContentAreaD)
+                                                 @Html.PropertyFor(m => Model.SettingsPage.PuffContentArea)
+                                                 @Html.PropertyFor(m => Model.CurrentPage.ContentAreaC)
+                                                 @Html.PropertyFor(m => Model.CurrentPage.ContentAreaB)
+                                             </div>
+                                         </section>
+                                     </section>
+                                         break;
+                                 }
+
+                                 <footer>
+                                     <div class="helper">
+                                         @RenderSection("Footer", false)
+                                     </div>
+                                 </footer>
+                             </div>
+                             @RenderSection("Scripts", required: false)
+
+                             @foreach (var scriptPath in IgnobilisService.Instance.Settings.Paths.Scripts)
+                             {
+                                 <script type="text/javascript" src="@scriptPath"></script>
+                             }
+
+                             <script type="text/javascript">
+                                 $(function () {
+                                     window.EventMessageHubJoinGroup("@Model.Profile.Group");
+                                 });
+                             </script>
+                         </body>
+
+                     </html>

@@ -1,0 +1,48 @@
+﻿@using Ignobilis.Business.Global
+@model ListBlockViewModel
+
+@switch (Model.Layout)
+{
+    case Strings.ListLayoutSimple:
+        <ul class="@Strings.ListLayoutSimple">
+            @foreach (var item in Model.Items)
+            {
+                {var targetLink = item.IsExternal ? "_blank" : "_self";
+                    <li>
+                        <a target="@targetLink" href="@item.Link">@item.Title</a>
+                    </li>
+                }
+            }
+        </ul>
+            break;
+
+    case Strings.ListLayoutNews:
+    <ul class="@Strings.ListLayoutNews">
+                @foreach (var item in Model.Items)
+                {
+                    <li>
+                        <p>@item.PublishedDate</p>
+                        <h2>@item.Title</h2>
+                        <p>@item.Description</p>
+                    @{var targetLink = item.IsExternal ? "_blank" : "_self";
+                        <a target="@targetLink" href="@item.Link">@item.Title</a>                    
+                    }
+            </li>
+        }
+    </ul>
+    break;
+
+    default:
+    <ul class="default">
+        @foreach (var item in Model.Items)
+        {
+            {
+                var targetLink = item.IsExternal ? "_blank" : "_self";
+                <li>
+                    <a target="@targetLink" href="@item.Link">@item.Title</a>
+                </li>
+            }
+        }
+    </ul>
+    break;
+}

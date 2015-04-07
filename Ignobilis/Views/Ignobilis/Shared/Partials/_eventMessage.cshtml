@@ -1,0 +1,37 @@
+﻿@model string
+
+<div id="eventMessages">
+    @foreach (var eventMessage in IgnobilisService.Instance.Settings.Functionality.PageEvents.EventMessages(Model))
+    {
+        <div class="message @eventMessage.Type">
+
+            @switch (eventMessage.Type)
+            {
+                case "emergency":
+                    <i class="fa fa-exclamation-circle"></i>
+                    break;
+                    
+                case "warning":
+                    <i class="fa fa-exclamation-triangle"></i>
+                    break;
+
+                case "information":
+                    <i class="fa fa-info-circle"></i>
+                    break;
+                    
+                case "default":
+                    <i class="fa fa-exclamation"></i>
+                    break;
+
+                case "error":
+                    <i class="fa fa-bug"></i>
+                    break;
+
+                default:
+                    <i class="fa fa-exclamation"></i>
+                    break;
+            }
+            <strong>@eventMessage.EventMessage</strong><a target="_blank" href="@eventMessage.LinkUrl">Läs mer</a>
+        </div>
+    }
+</div>

@@ -1,0 +1,21 @@
+﻿@using EPiServer.Cms.Shell
+@using EPiServer.Core
+@model List<IContent>
+
+<section id="breadcrumb">
+    <span>
+        @Html.Raw(IgnobilisService.Instance.Settings.Functionality.BreadCrumb.Message)
+        @foreach (var item in Model.Select((value, i) => new { value, i }))
+        {
+            if (item.i + 1 < Model.Count)
+            {
+                <span><a href="@item.value.PublicUrl()">@item.value.Name</a></span>
+                <span>@Html.Raw(IgnobilisService.Instance.Settings.Functionality.BreadCrumb.Seperator)</span>
+            }
+            else
+            {
+                <span>@item.value.Name</span>
+            }
+        }
+    </span>
+</section>

@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Ignobilis/Shared/_Layout.cshtml";    
+@model PageViewModel<Ignobilis.Models.Pages.IB_OrdinaryPage>
+}
+
+@section Head{
+    <title>@Model.CurrentPage.PageName</title>
+}
+
+
+
+<article>
+    <header>
+        <h1 @Html.EditAttributes(x => x.CurrentPage.Headline)>@Model.CurrentPage.Headline</h1>
+        @Html.PropertyFor(m => m.CurrentPage.Ingress)
+    </header>
+    <div>
+        @Html.PropertyFor(m => m.CurrentPage.Image)
+        @Html.PropertyFor(m => m.CurrentPage.MainBody)
+    </div>
+</article>
+    
+@section Footer
+{
+    @Html.PropertyFor(m => m.CurrentPage.FooterContentArea)
+}
+

@@ -1,0 +1,21 @@
+﻿@using Ignobilis.Business
+@model Ignobilis.Models.Blocks.IB_PuffBlock
+
+
+<div class="puff">
+    <strong>@Model.Header</strong>
+    
+    <div class="helper">
+        <p>@Model.Description</p>
+
+        @if (Model.Links != null)
+        {
+            foreach (var item in Model.Links.ToPages())
+            {
+                <a href="@Html.Raw(item.PageLink.Url())">@item.PageName</a>
+            }
+        }
+    </div>
+</div>
+
+

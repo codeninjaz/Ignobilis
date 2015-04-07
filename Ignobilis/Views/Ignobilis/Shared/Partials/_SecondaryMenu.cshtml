@@ -1,0 +1,27 @@
+﻿@using Ignobilis.Business
+@model IPageViewModel<Ignobilis.Models.Pages.IB_BasePage>
+
+@{ var pagesLoaded = IgnobilisService.Instance.Settings.Functionality.SecondaryMenu.Load(IgnobilisService.Instance.Settings.Functionality.MainMenu.ActiveMenuItem.PageLink);}
+
+@if (pagesLoaded.Count > 0)
+{
+    <nav id="secondary-menu">
+        @foreach (var item in pagesLoaded)
+        {
+            if (IgnobilisService.Instance.Settings.Functionality.SecondaryMenu.LocatedInMenu(Model.CurrentPage, item))
+            {
+                <a class="active" href="@item.PageLink.Url()">@item.Name</a>
+            }
+            else
+            {
+                <a href="@item.PageLink.Url()">@item.Name</a>
+            }
+        }
+    </nav>
+}
+else
+{
+    {
+        IgnobilisService.Instance.Settings.Functionality.SecondaryMenu.ActiveMenuItem = null;
+    }
+}

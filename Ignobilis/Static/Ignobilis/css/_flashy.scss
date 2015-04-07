@@ -1,0 +1,42 @@
+.flashy{
+    background-color: $base-color;
+
+    .wrapper{
+        background-color: $base-color;
+        margin: 0;
+        width: 100%;
+        border: 0;
+
+        article{
+            width: 50%;
+            background-color: $base-lighter;
+            margin: 0 auto;
+            padding: $size-large;
+
+            header{
+                display:block;
+            }
+        }
+
+        header{
+            display:none;
+        }
+
+        #main-menu {
+            display: none;
+        }
+
+        #secondary-menu {
+            display: none;
+        }
+
+        #breadcrumb {
+            display: none;
+        }
+
+        footer {
+            background-color: $base-color;
+            border: 0;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+﻿@using EPiServer.Core
+@using Ignobilis.Business
+@using Ignobilis.Business.Interfaces
+@model IPageViewModel<Ignobilis.Models.Pages.IB_BasePage>
+
+    @{ var pageToLoadFrom = PageReference.EmptyReference;}
+    @if (Model.SettingsPage.IsSecondaryMenuActive)
+    {
+        if (IgnobilisService.Instance.Settings.Functionality.SecondaryMenu.ActiveMenuItem != null)
+        {
+            pageToLoadFrom = IgnobilisService.Instance.Settings.Functionality.SecondaryMenu.ActiveMenuItem.PageLink;
+        }
+    }
+    else
+    {
+        if (IgnobilisService.Instance.Settings.Functionality.MainMenu.ActiveMenuItem != null)
+        {
+            pageToLoadFrom = IgnobilisService.Instance.Settings.Functionality.MainMenu.ActiveMenuItem.PageLink;
+        }
+    }
+
+    @RecursiveMenuHelper(IgnobilisService.Instance.Settings.Functionality.Menu.Load(pageToLoadFrom, Model.CurrentPage.PageLink))
+
+    @helper RecursiveMenuHelper(List<IRecursiveMenu> menuList, int indentLevel = 0)
+    {
+    <ul>
+        @foreach (var item in menuList)
+        {
+            if (item.IsInChain && item.HaveChildren && item.Level == indentLevel)
+            {
+                <li>
+                    <a href="@item.PageData.PageLink.Url()">@item.PageData.PageName</a>
+                    @RecursiveMenuHelper(menuList.Where(m => m.Level >= item.Level + 1).ToList(), item.Level + 1)
+                </li>
+            }
+            else if (item.Level == indentLevel)
+            {
+                <li>
+                    <a href="@item.PageData.PageLink.Url()">@item.PageData.PageName</a>
+                </li>
+            }
+        }
+    </ul>
+}
+
+
+

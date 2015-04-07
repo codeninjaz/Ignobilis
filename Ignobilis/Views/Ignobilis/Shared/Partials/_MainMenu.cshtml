@@ -1,0 +1,17 @@
+﻿@using Ignobilis.Business
+@using Ignobilis.Models.Pages
+@model IPageViewModel<IB_BasePage>
+
+<nav id="main-menu">
+    @foreach (var item in IgnobilisService.Instance.Settings.Functionality.MainMenu.Load(Model.SettingsPage.MainMenu))
+    {
+        if (IgnobilisService.Instance.Settings.Functionality.MainMenu.LocatedInMenu(Model.CurrentPage, item))
+        {
+            <a class="active" href="@item.PageLink.Url()">@item.Name</a>
+        }
+        else
+        {
+            <a href="@item.PageLink.Url()">@item.Name</a>
+        }
+    }
+</nav>
