@@ -17,7 +17,7 @@ namespace Ignobilis.Test
         [TestInitialize]
         public void MockEpiServerDependencies()
         {
-            //Create a mock repository
+            //Create a mock repository - slack
             var mockRepository = new Mock<IContentRepository>();
 
             var pageStart   = new IB_BasePage {Headline = "Start"};
