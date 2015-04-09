@@ -326,12 +326,14 @@
     <Compile Include="Business\Util.cs" />
     <Compile Include="Controllers\ListBlockController.cs" />
     <Compile Include="Controllers\OrdinaryPageController.cs" />
+    <Compile Include="Controllers\EditorialBlockController.cs" />
     <Compile Include="Controllers\PuffBlockController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
     <Compile Include="IgnobilisService.cs" />
     <Compile Include="Business\Attributes\SiteContentType.cs" />
     <Compile Include="Business\Attributes\SiteImageUrl.cs" />
     <Compile Include="Models\Blocks\IB_BaseBlock.cs" />
+    <Compile Include="Models\Blocks\IB_EditorialBlock.cs" />
     <Compile Include="Models\Blocks\IB_PuffBlock.cs" />
     <Compile Include="Models\Blocks\IB_ListBlock.cs" />
     <Compile Include="Models\Data\PageDataItem.cs" />
@@ -413,6 +415,7 @@
     <Content Include="Static\Ignobilis\css\_flashy.scss" />
     <Content Include="Views\Ignobilis\Shared\Partials\_EventMessage.cshtml" />
     <Content Include="Views\Ignobilis\Blocks\List\index.cshtml" />
+    <Content Include="Views\Ignobilis\Blocks\Editorial\Index.cshtml" />
     <None Include="_CreateNewNuGetPackage\DoNotModify\NuGet.exe" />
   </ItemGroup>
   <ItemGroup>
