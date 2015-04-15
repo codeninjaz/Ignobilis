@@ -22,7 +22,7 @@ namespace Ignobilis.Models.Pages
         [CultureSpecific]
         [Display(
             Name = "Aktivera den sekundära menyn",
-            Description = "Är denna aktiv skapas en menu under huvudmenyn",
+            Description = "Är denna aktiv skapas en menu under huvudmenyn.",
             GroupName = SystemTabNames.Content,
             Order = 4)]
         public virtual bool IsSecondaryMenuActive { get; set; }
