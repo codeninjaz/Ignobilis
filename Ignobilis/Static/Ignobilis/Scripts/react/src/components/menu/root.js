@@ -1,66 +1,28 @@
 import React from 'react';
 import Nav from './nav';
+import Store from './menuStore';
 
-var menu = {
-    links:[
-    {    
-        state: 'inactive',   
-        title: 'link1',
-        link: '/link1'
-    },
-    {
-        state: 'inactive',
-        title: 'link2',
-        link: '/link2'
-    },    
-    {
-        state: 'active',        
-        title: 'link3',
-        link: '/link3'
-    },    
-    {
-        state: 'inactive',
-        title: 'link4',
-        link: '/link4'
-    },    
-    {
-        state: 'inactive',
-        title: 'link5',
-        link: '/link5'
-    },    
-    {
-        state: 'inactive',
-        title: 'link6',
-        link: '/link6'
-    },    
-    {
-        state: 'inactive',
-        title: 'link8',
-        link: '/link8'
-    },    
-    {
-        state: 'inactive',
-        title: 'link9',
-        link: '/link9'
-    },    
-    {
-        state: 'inactive',
-        title: 'link10',
-        link: '/link10'
-    },    
-    {
-        state: 'inactive',
-        title: 'link11',
-        link: '/link11'
-    }]
-}
-//This is a render-view only rendering allowed
 export default class RenderView1 extends React.Component {
     constructor(props) {
         super(props);
+        this.state = this.getState();
     }
 
+    getState(){
+        return {
+            menuData: Store.getItems()
+        }
+    }
+    onStoreChange() {
+        this.setState(this.getState());
+    }
+    componentDidMount() {
+        Store.addChangeListener(this.onStoreChange.bind(this));
+    }
+    componentWillUnmount() {
+        Store.removeChangeListener(this.onStoreChange.bind(this));
+    }
     render(){
-        return(<Nav menuItems={menu} />);
+        return(<Nav menuItems={this.state.menuData} />);
     }
 }

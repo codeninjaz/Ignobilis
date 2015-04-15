@@ -1,0 +1,53 @@
+{
+    "links":[
+    {
+        "state": "inactive",
+        "title": "link1",
+        "link": "/link1"
+    },
+    {
+        "state": "inactive",
+        "title": "link2",
+        "link": "/link2"
+    },
+    {
+        "state": "active",
+        "title": "link3",
+        "link": "/link3"
+    },
+    {
+        "state": "inactive",
+        "title": "link4",
+        "link": "/link4"
+    },
+    {
+        "state": "inactive",
+        "title": "link5",
+        "link": "/link5"
+    },
+    {
+        "state": "inactive",
+        "title": "link6",
+        "link": "/link6"
+    },
+    {
+        "state": "inactive",
+        "title": "link8",
+        "link": "/link8"
+    },
+    {
+        "state": "inactive",
+        "title": "link9",
+        "link": "/link9"
+    },
+    {
+        "state": "inactive",
+        "title": "link10",
+        "link": "/link10"
+    },
+    {
+        "state": "inactive",
+        "title": "link11",
+        "link": "/link11"
+    }]
+}
