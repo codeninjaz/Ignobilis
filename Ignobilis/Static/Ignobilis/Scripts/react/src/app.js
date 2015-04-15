@@ -1,5 +1,5 @@
 import React from 'react';
-import Root from './components/root.js';
+import Root from './components/menu/root.js';
 
 require('./styles/bootstrap.min.css');
 require('./styles/font-awesome.min.css');
@@ -13,5 +13,5 @@ class App extends React.Component {
     }
 }
 
-React.render(<App />, document.getElementById('app'));
-
+React.render(<App />, document.getElementById('menu1'));
+React.render(<App />, document.getElementById('menu2'));

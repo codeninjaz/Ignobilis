@@ -8,9 +8,9 @@ export default class RenderView1 extends React.Component {
 
     render(){
         return(
-        <div>
-            BAJS!!!
-        </div>
+        <a className={this.props.item.state} href={this.props.item.link}>
+            {this.props.item.title}            
+        </a>
         );
     }
 }
