@@ -53,7 +53,7 @@ namespace Ignobilis.Business
 
         public static String AssemblyVersion()
         {
-            var assembly = Assembly.LoadFrom("Ignobilis.dll");
+            var assembly = Assembly.GetExecutingAssembly();
             var ver = assembly.GetName().Version;
 
             return ver.ToString();
