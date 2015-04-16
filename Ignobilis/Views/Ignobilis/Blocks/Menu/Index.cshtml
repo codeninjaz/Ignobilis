@@ -1,4 +1,4 @@
 ﻿@model MenuBlockViewModel
 
 
-<div class="react-menu" data-id="@Model.BlockGuid" data-children-from="@Model.ChildrenFrom"></div>
+<div class="react-menu" id="@Model.BlockGuid" data-children-from="@String.Join(",", Model.ChildrenFrom)" data-pages="@String.Join(",", Model.Pages)"></div>
