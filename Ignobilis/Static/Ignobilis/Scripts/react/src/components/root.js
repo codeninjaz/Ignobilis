@@ -1,9 +1,8 @@
 import React from 'react';
 import MenuRoot from './menu/root';
 
-$('.react-menu-info').each(function()
+$('.react-menu').each(function()
     {
-        var id = $(this).attr('data-id');
-        console.log();
-        React.render(<MenuRoot uid={$(this).attr('data-id')} />, document.getElementById(id));
+        var id = $(this).attr('id');
+        React.render(<MenuRoot uid={id} />, document.getElementById(id));
     });
