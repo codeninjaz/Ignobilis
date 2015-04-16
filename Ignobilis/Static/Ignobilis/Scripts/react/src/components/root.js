@@ -1,16 +1,9 @@
 import React from 'react';
+import MenuRoot from './menu/root';
 
-//This is a render-view only rendering allowed
-export default class RenderView1 extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render(){
-        return(
-        <div>
-            BAJS!!!
-        </div>
-        );
-    }
-}
+$('.react-menu-info').each(function()
+    {
+        var id = $(this).attr('data-id');
+        console.log();
+        React.render(<MenuRoot uid={$(this).attr('data-id')} />, document.getElementById(id));
+    });

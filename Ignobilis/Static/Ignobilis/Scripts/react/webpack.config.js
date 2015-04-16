@@ -8,9 +8,9 @@ module.exports = {
         app: [
             'webpack-dev-server/client?http://localhost:8090',
             'webpack/hot/dev-server',
-            './src/app.js'
+            './src/components/root.js'
         ],
-        vendor: ['react','lodash','pubsub-js','mcfly','node-uuid']
+        vendor: ['react','lodash','pubsub-js','mcfly','node-uuid','classnames']
     },
     //Skapa source maps för js filerna så att dev-tools kan länka till rätt källkod
     devtool: 'source-map',
@@ -48,7 +48,7 @@ module.exports = {
             loader: "file-loader"
         }]
     },
-    //Kolla på dessa filtyper (osäker på vad denna gör :) )
+    //Använd dessa vid import utan att behöva ange ändelse)
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
@@ -60,8 +60,9 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js', Infinity),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
+        new webpack.IgnorePlugin(/vertx/),
         new HtmlWebpackPlugin({
-            title: 'Calendar test',
+            title: 'Ignobilis apps',
             template: 'src/index.html',
             assets: {
                 'app': 'app.js',

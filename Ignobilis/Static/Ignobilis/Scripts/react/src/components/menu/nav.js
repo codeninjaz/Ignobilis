@@ -17,10 +17,11 @@ export default class RenderView1 extends React.Component {
     }
 
     render(){
-        console.log(this.props.menuItems)
+        console.log('this.props',this.props)
 
         return(
         <nav className="menu">
+            <span>{this.props.uid}: </span>
             {this.makeItems()}
         </nav>
         );

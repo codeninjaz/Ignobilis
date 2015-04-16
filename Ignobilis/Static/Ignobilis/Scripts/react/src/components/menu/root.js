@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './nav';
-import Store from './menuStore';
+import Store from './data/menuStore';
 
 export default class RenderView1 extends React.Component {
     constructor(props) {
@@ -23,6 +23,8 @@ export default class RenderView1 extends React.Component {
         Store.removeChangeListener(this.onStoreChange.bind(this));
     }
     render(){
-        return(<Nav menuItems={this.state.menuData} />);
+        return(
+            <Nav menuItems={this.state.menuData} uid={this.props.uid}/>
+            );
     }
 }

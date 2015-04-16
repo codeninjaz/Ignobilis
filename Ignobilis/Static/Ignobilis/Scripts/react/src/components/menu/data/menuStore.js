@@ -1,6 +1,6 @@
 import McFly from 'mcfly';
 import Data from './menuMockData.json';
-import Const from '../actionConstants'
+import Const from './actionConstants'
 
 let Flux = new McFly();
 let menuMockData = Data;
