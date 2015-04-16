@@ -32,7 +32,9 @@ namespace Ignobilis.Business
                                             "/Static/Ignobilis/Scripts/jquery-1.6.4.min.js",
                                             "/Static/Ignobilis/Scripts/jquery.signalR-2.2.0.min.js",
                                             "/signalr/hubs",
-                                            "/Static/Ignobilis/Scripts/EventMessageHub.js"
+                                            "/Static/Ignobilis/Scripts/EventMessageHub.js",
+                                            "/Static/Ignobilis/Scripts/Generated/vendor.js?=" + Util.AssemblyVersion(),                                        
+                                            "/Static/Ignobilis/Scripts/Generated/app.js?v=" + Util.AssemblyVersion(),                                        
                                         }; 
         public List<string> Scripts { get { return _scripts; } set { _scripts = value; } }
     }

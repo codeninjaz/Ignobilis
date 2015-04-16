@@ -324,6 +324,7 @@
     <Compile Include="Business\Interfaces\ITheme.cs" />
     <Compile Include="Business\Interfaces\IViewMode.cs" />
     <Compile Include="Business\Util.cs" />
+    <Compile Include="Controllers\MenuBlockController.cs" />
     <Compile Include="Controllers\ListBlockController.cs" />
     <Compile Include="Controllers\OrdinaryPageController.cs" />
     <Compile Include="Controllers\EditorialBlockController.cs" />
@@ -334,6 +335,7 @@
     <Compile Include="Business\Attributes\SiteImageUrl.cs" />
     <Compile Include="Models\Blocks\IB_BaseBlock.cs" />
     <Compile Include="Models\Blocks\IB_EditorialBlock.cs" />
+    <Compile Include="Models\Blocks\IB_MenuBlock.cs" />
     <Compile Include="Models\Blocks\IB_PuffBlock.cs" />
     <Compile Include="Models\Blocks\IB_ListBlock.cs" />
     <Compile Include="Models\Data\PageDataItem.cs" />
@@ -346,6 +348,7 @@
     <Compile Include="Models\Pages\IB_StartPage.cs" />
     <Compile Include="Models\ViewModels\IPageViewModel.cs" />
     <Compile Include="Models\ViewModels\ListBlockViewModel.cs" />
+    <Compile Include="Models\ViewModels\MenuBlockViewModel.cs" />
     <Compile Include="Models\ViewModels\PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -447,6 +450,7 @@
     <Content Include="Static\Ignobilis\Scripts\react\.jscsrc" />
     <Content Include="Static\Ignobilis\Scripts\react\package.json" />
     <Content Include="Static\Ignobilis\Scripts\react\README.md" />
+    <Content Include="Views\Ignobilis\Blocks\Menu\Index.cshtml" />
     <None Include="_CreateNewNuGetPackage\DoNotModify\NuGet.exe" />
   </ItemGroup>
   <ItemGroup>
