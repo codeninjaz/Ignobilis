@@ -51,5 +51,6 @@ namespace Ignobilis.Business
 
         public IFunctionality Functionality { get; set; }
         public Type ProfileType { get; set; }
+        public string ConnectionString { get; set; }
     }
 }

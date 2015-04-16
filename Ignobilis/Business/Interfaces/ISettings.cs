@@ -16,5 +16,7 @@ namespace Ignobilis.Business.Interfaces
         IFunctionality Functionality { get; set; }
 
         Type ProfileType { get; set; }
+
+        String ConnectionString { get; set; }
     }
 }

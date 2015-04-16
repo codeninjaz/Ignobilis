@@ -177,6 +177,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SqlServer">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SqlServer.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
@@ -399,7 +402,6 @@
     <Content Include="Static\Ignobilis\gfx\Default_Page.png" />
     <Content Include="Static\Ignobilis\gfx\Ordinary_Page.png" />
     <Content Include="Static\Ignobilis\gfx\Start_Page.png" />
-    <Content Include="ClientResources\Scripts\widgets\ignobilis\ListBlockSelectorWidget.js" />
     <Content Include="Static\Ignobilis\Scripts\react\.gitignore" />
     <Content Include="Static\Ignobilis\Scripts\react\src\app.js" />
     <Content Include="Static\Ignobilis\Scripts\react\src\components\controllerview1.js" />
@@ -451,6 +453,13 @@
     <Content Include="Static\Ignobilis\Scripts\react\package.json" />
     <Content Include="Static\Ignobilis\Scripts\react\README.md" />
     <Content Include="Views\Ignobilis\Blocks\Menu\Index.cshtml" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
     <None Include="_CreateNewNuGetPackage\DoNotModify\NuGet.exe" />
   </ItemGroup>
   <ItemGroup>
