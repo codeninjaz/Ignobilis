@@ -1,13 +1,12 @@
 ﻿@{
     Layout = "~/Views/Ignobilis/Shared/_Layout.cshtml";    
-@model PageViewModel<Ignobilis.Models.Pages.IB_OrdinaryPage>
 }
+
+@model PageViewModel<Ignobilis.Models.Pages.IB_OrdinaryPage>
 
 @section Head{
     <title>@Model.CurrentPage.PageName</title>
 }
-
-
 
 <article>
     <header>
@@ -19,9 +18,8 @@
         @Html.PropertyFor(m => m.CurrentPage.MainBody)
     </div>
 </article>
-    
-@section Footer
-{
+
+@section Footer{
     @Html.PropertyFor(m => m.CurrentPage.FooterContentArea)
 }
 

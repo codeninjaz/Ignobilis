@@ -52,7 +52,7 @@
                                  @if (Model.SettingsPage.IsBreadCrumbsActive)
                                  {
                                      @Html.Partial("~/Views/Ignobilis/Shared/Partials/_BreadCrumb.cshtml",
-                    IgnobilisService.Instance.Settings.Functionality.BreadCrumb.Load(Model.CurrentPage.PageLink))
+                                         IgnobilisService.Instance.Settings.Functionality.BreadCrumb.Load(Model.CurrentPage.PageLink))
                                  }
 
                                  @switch (IgnobilisService.Instance.Settings.Functionality.ViewMode.Load(Model.CurrentPage, Model.SettingsPage, HttpContext.Current))
@@ -196,12 +196,13 @@
                                      </div>
                                  </footer>
                              </div>
-                             @RenderSection("Scripts", required: false)
 
                              @foreach (var scriptPath in IgnobilisService.Instance.Settings.Paths.Scripts)
                              {
                                  <script type="text/javascript" src="@scriptPath"></script>
                              }
+
+                             @RenderSection("Scripts", required: false)
 
                              <script type="text/javascript">
                                  $(function () {

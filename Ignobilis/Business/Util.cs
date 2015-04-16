@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 using System.Web.UI.WebControls;
 using EPiServer;
@@ -48,6 +49,14 @@ namespace Ignobilis.Business
             var url = new UrlBuilder(pd.LinkURL);
             EPiServer.Global.UrlRewriteProvider.ConvertToExternal(url, pd.PageLink, Encoding.UTF8);
             return url.ToString();   
+        }
+
+        public static String AssemblyVersion()
+        {
+            var assembly = Assembly.LoadFrom("Ignobilis.dll");
+            var ver = assembly.GetName().Version;
+
+            return ver.ToString();
         }
 
         public enum MessageType

@@ -4,8 +4,8 @@
   "description": "React kod för Ignobilis",
   "main": "app.js",
   "scripts": {
-    "prod": "webpack -p --output-path ./dist --optimize-minimize -optimize-dedupe",
-    "opack": "webpack --output-path ./dist",
+    "prod": "webpack -p --output-path ../generated --optimize-minimize -optimize-dedupe",
+    "opack": "webpack --output-path ../generated",
     "watch": "webpack -watch --colors",
     "dev": "node srv.js"
   },
