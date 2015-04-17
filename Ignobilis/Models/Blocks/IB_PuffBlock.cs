@@ -36,5 +36,13 @@ namespace Ignobilis.Models.Blocks
             GroupName = SystemTabNames.Content,
             Order = 4)]
         public virtual LinkItemCollection Links { get; set; }
+        
+        [Display(
+            Name = "Pufftyp",
+            Description = "Vad är detta för typ av puff?",
+            GroupName = SystemTabNames.Content,
+            Order = 4)]
+        [UIHint(Business.Global.Strings.UIHints.EventMessageType)]
+        public virtual String PuffType { get; set; }
     }
 }
