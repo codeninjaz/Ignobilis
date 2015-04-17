@@ -33,6 +33,7 @@ namespace Ignobilis.Business.Functionality
         public void OnPublishedPage(object sender, PageEventArgs eventArgs)
         {
             var pageData = ServiceLocator.Current.GetInstance<IContentRepository>().Get<PageData>(ContentReference.StartPage);
+
             var settingsPageReference = pageData.Property[Strings.DynamicPropertySettingName].Value as ContentReference;
             if (settingsPageReference == null) return;
 
@@ -50,11 +51,11 @@ namespace Ignobilis.Business.Functionality
             {
                 if (string.IsNullOrEmpty(message.Group))
                 {
-                    hubContext.Clients.All.broadcastMessage(message.Type, message.EventMessage, message.ExternalURL);
+                    hubContext.Clients.All.broadcastMessage(message.Type, message.EventMessage, message.LinkUrl.ToString());
                 }
                 else
                 {
-                    hubContext.Clients.Group(message.Group.ToLower()).broadcastMessage(message.Type, message.EventMessage, message.ExternalURL);
+                    hubContext.Clients.Group(message.Group.ToLower()).broadcastMessage(message.Type, message.EventMessage, message.LinkUrl.ToString());
                 }
             }            
         }
