@@ -385,7 +385,6 @@
     <Content Include="Static\Ignobilis\css\_rotated-flipped.scss" />
     <Content Include="Static\Ignobilis\css\_stacked.scss" />
     <Content Include="Static\Ignobilis\css\_variables.scss" />
-    <Content Include="module.config" />
     <Content Include="Static\Ignobilis\Scripts\generated\app.js.map" />
     <Content Include="Static\Ignobilis\Scripts\generated\vendor.js.map" />
     <None Include="Static\Ignobilis\Scripts\jquery-1.6.4-vsdoc.js" />
@@ -457,13 +456,6 @@
     <Content Include="Static\Ignobilis\Scripts\react\package.json" />
     <Content Include="Static\Ignobilis\Scripts\react\README.md" />
     <Content Include="Views\Ignobilis\Blocks\Menu\Index.cshtml" />
-    <Content Include="web.config" />
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
     <None Include="_CreateNewNuGetPackage\DoNotModify\NuGet.exe" />
   </ItemGroup>
   <ItemGroup>
