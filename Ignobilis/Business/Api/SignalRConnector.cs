@@ -30,13 +30,15 @@ namespace Ignobilis.Business.Api
 
             public void Send(IB_EventMessage message)
             {
+                var link = message.LinkUrl ?? "";
+
                 if (string.IsNullOrEmpty(message.Group))
                 {
-                    _clients.All.broadcastMessage(message.Type, message.EventMessage, message.LinkUrl.ToString());
+                    _clients.All.broadcastMessage(message.Type, message.EventMessage, link);
                 }
                 else
                 {
-                    _clients.Group(message.Group.ToLower()).broadcastMessage(message.Type, message.EventMessage, message.LinkUrl.ToString());
+                    _clients.Group(message.Group.ToLower()).broadcastMessage(message.Type, message.EventMessage, link);
                 }
             }
         }
