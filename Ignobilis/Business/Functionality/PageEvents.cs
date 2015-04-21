@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Castle.Core.Internal;
 using EPiServer;
+using EPiServer.ClientScript;
 using EPiServer.Cms.Shell;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
@@ -27,8 +28,7 @@ namespace Ignobilis.Business.Functionality
             .GetChildren<IB_EventMessage>(settingsPage.EventMessageRoot)
             .Where(m => m.CheckPublishedStatus(PagePublishedStatus.Published)).ToList();
 
-            return !group.IsNullOrEmpty() ? result.Where(m => String.Equals(m.Group, group, StringComparison.CurrentCultureIgnoreCase) || m.Group.IsNullOrEmpty()).ToList() : result;
-            //test igen
+            return !group.IsNullOrEmpty() ? result.Where(m => String.Equals(m.Group, group, StringComparison.CurrentCultureIgnoreCase) || m.Group.IsNullOrEmpty()).ToList() : result;            
         }
 
         public void OnPublishedPage(object sender, PageEventArgs eventArgs)
@@ -45,20 +45,11 @@ namespace Ignobilis.Business.Functionality
             var ibEventMessage = eventArgs.Page as IB_EventMessage;
             if (ibEventMessage == null) return;
 
-            var hubContext = GlobalHost.ConnectionManager.GetHubContext<EventMessageHub>();
-            hubContext.Clients.All.clearMessages();
-
+            SignalRConnector.EventMessage.Clear();
             foreach (var message in EventMessages(string.Empty))
             {
-                if (string.IsNullOrEmpty(message.Group))
-                {
-                    hubContext.Clients.All.broadcastMessage(message.Type, message.EventMessage, message.LinkUrl.ToString());
-                }
-                else
-                {
-                    hubContext.Clients.Group(message.Group.ToLower()).broadcastMessage(message.Type, message.EventMessage, message.LinkUrl.ToString());
-                }
-            }            
+                SignalRConnector.EventMessage.Send(message);
+            }
         }
 
     }

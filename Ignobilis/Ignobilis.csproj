@@ -275,6 +275,7 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
     <Compile Include="Business\Api\EventMessageHub.cs" />
+    <Compile Include="Business\Api\SignalRConnector.cs" />
     <Compile Include="Business\Attributes\ContentSelectionAttribute.cs" />
     <Compile Include="Business\BaseFunctionality.cs" />
     <Compile Include="Business\Functionality\Blocks.cs" />
