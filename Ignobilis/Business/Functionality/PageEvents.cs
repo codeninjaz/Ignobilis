@@ -28,6 +28,7 @@ namespace Ignobilis.Business.Functionality
             .Where(m => m.CheckPublishedStatus(PagePublishedStatus.Published)).ToList();
 
             return !group.IsNullOrEmpty() ? result.Where(m => String.Equals(m.Group, group, StringComparison.CurrentCultureIgnoreCase) || m.Group.IsNullOrEmpty()).ToList() : result;
+            //test
         }
 
         public void OnPublishedPage(object sender, PageEventArgs eventArgs)
