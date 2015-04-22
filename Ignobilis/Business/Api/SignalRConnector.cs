@@ -34,11 +34,11 @@ namespace Ignobilis.Business.Api
 
                 if (string.IsNullOrEmpty(message.Group))
                 {
-                    _clients.All.broadcastMessage(message.Type, message.EventMessage, link);
+                    _clients.All.broadcastMessage(message.Type, message.EventMessage, link.OriginalString);
                 }
                 else
                 {
-                    _clients.Group(message.Group.ToLower()).broadcastMessage(message.Type, message.EventMessage, link);
+                    _clients.Group(message.Group.ToLower()).broadcastMessage(message.Type, message.EventMessage, link.OriginalString);
                 }
             }
         }
