@@ -3,6 +3,9 @@ import MenuRoot from './menu/root';
 
 $('.react-menu').each(function()
     {
-        var id = $(this).attr('id');
-        React.render(<MenuRoot uid={id} />, document.getElementById(id));
+        let id = $(this).attr('id');
+        let childrenFrom = $(this).attr('data-children-from');
+        let pages = $(this).attr('data-pages');
+
+        React.render(<MenuRoot uid={id} childrenFrom={childrenFrom} pages={pages} />, document.getElementById(id));
     });

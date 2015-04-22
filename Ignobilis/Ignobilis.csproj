@@ -407,16 +407,16 @@
     <Content Include="Static\Ignobilis\gfx\Ordinary_Page.png" />
     <Content Include="Static\Ignobilis\gfx\Start_Page.png" />
     <Content Include="Static\Ignobilis\Scripts\react\.gitignore" />
-    <Content Include="Static\Ignobilis\Scripts\react\src\components\controllerview1.js" />
-    <Content Include="Static\Ignobilis\Scripts\react\src\components\imagelist.js" />
-    <Content Include="Static\Ignobilis\Scripts\react\src\components\menu\data\actionConstants.js" />
-    <Content Include="Static\Ignobilis\Scripts\react\src\components\menu\data\menuStore.js" />
-    <Content Include="Static\Ignobilis\Scripts\react\src\components\menu\item.js" />
-    <Content Include="Static\Ignobilis\Scripts\react\src\components\menu\nav.js" />
-    <Content Include="Static\Ignobilis\Scripts\react\src\components\menu\root.js" />
-    <Content Include="Static\Ignobilis\Scripts\react\src\components\renderview2.js" />
-    <Content Include="Static\Ignobilis\Scripts\react\src\components\root.js" />
-    <Content Include="Static\Ignobilis\Scripts\react\src\index.html" />
+    <Content Include="Static\Ignobilis\Scripts\react\components\controllerview1.js" />
+    <Content Include="Static\Ignobilis\Scripts\react\components\imagelist.js" />
+    <Content Include="Static\Ignobilis\Scripts\react\components\menu\data\actionConstants.js" />
+    <Content Include="Static\Ignobilis\Scripts\react\components\menu\data\menuStore.js" />
+    <Content Include="Static\Ignobilis\Scripts\react\components\menu\item.js" />
+    <Content Include="Static\Ignobilis\Scripts\react\components\menu\nav.js" />
+    <Content Include="Static\Ignobilis\Scripts\react\components\menu\root.js" />
+    <Content Include="Static\Ignobilis\Scripts\react\components\renderview2.js" />
+    <Content Include="Static\Ignobilis\Scripts\react\components\root.js" />
+    <Content Include="Static\Ignobilis\Scripts\react\index.html" />
     <Content Include="Static\Ignobilis\Scripts\react\srv.js" />
     <Content Include="Static\Ignobilis\Scripts\react\webpack.config.js" />
     <Content Include="Views\Ignobilis\Web.config" />
@@ -442,7 +442,7 @@
     <Content Include="Static\Ignobilis\Scripts\react\package.json" />
     <Content Include="Static\Ignobilis\Scripts\react\README.md" />
     <Content Include="Views\Ignobilis\Blocks\Menu\Index.cshtml" />
-    <Content Include="Static\Ignobilis\Scripts\react\src\components\menu\data\menuMockData.json" />
+    <Content Include="Static\Ignobilis\Scripts\react\components\menu\data\menuMockData.json" />
     <None Include="_CreateNewNuGetPackage\DoNotModify\NuGet.exe" />
   </ItemGroup>
   <ItemGroup>

@@ -10,7 +10,7 @@ export default class RenderView1 extends React.Component {
 
     getState(){
         return {
-            menuData: Store.getItems()
+            menuData: Store.getItems(this.props.childrenFrom, this.props.pages)
         }
     }
     onStoreChange() {

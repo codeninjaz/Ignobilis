@@ -5,7 +5,7 @@ import Const from './actionConstants'
 let Flux = new McFly();
 let menuMockData = Data;
 export default Flux.createStore({
-        getItems: function() {
+        getItems: function(childrenFrom, pages) {
            return menuMockData
         }
     },
