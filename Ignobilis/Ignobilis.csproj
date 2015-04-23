@@ -274,6 +274,7 @@
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
+    <Compile Include="Business\Abstract\BlockHub.cs" />
     <Compile Include="Business\Api\EventMessageHub.cs" />
     <Compile Include="Business\Api\SignalRConnector.cs" />
     <Compile Include="Business\Api\UserActivityHub.cs" />
@@ -310,6 +311,7 @@
     <Compile Include="Business\Initializers\ContainerPageUIDescriptor.cs" />
     <Compile Include="Business\Initializers\EventMessageInitialization.cs" />
     <Compile Include="Business\Initializers\Startup.cs" />
+    <Compile Include="Business\Interfaces\IBlockHub.cs" />
     <Compile Include="Business\Interfaces\IBlocks.cs" />
     <Compile Include="Business\Interfaces\IBreadCrumb.cs" />
     <Compile Include="Business\Interfaces\IFunctionality.cs" />
@@ -329,6 +331,7 @@
     <Compile Include="Business\Interfaces\ITheme.cs" />
     <Compile Include="Business\Interfaces\IViewMode.cs" />
     <Compile Include="Business\Util.cs" />
+    <Compile Include="Controllers\UserActivityBlockController.cs" />
     <Compile Include="Controllers\MenuBlockController.cs" />
     <Compile Include="Controllers\ListBlockController.cs" />
     <Compile Include="Controllers\OrdinaryPageController.cs" />
@@ -341,6 +344,7 @@
     <Compile Include="Models\Blocks\IB_BaseBlock.cs" />
     <Compile Include="Models\Blocks\IB_EditorialBlock.cs" />
     <Compile Include="Models\Blocks\IB_MenuBlock.cs" />
+    <Compile Include="Models\Blocks\IB_UserActivityBlock.cs" />
     <Compile Include="Models\Blocks\IB_PuffBlock.cs" />
     <Compile Include="Models\Blocks\IB_ListBlock.cs" />
     <Compile Include="Models\Data\PageDataItem.cs" />
@@ -355,11 +359,13 @@
     <Compile Include="Models\ViewModels\ListBlockViewModel.cs" />
     <Compile Include="Models\ViewModels\MenuBlockViewModel.cs" />
     <Compile Include="Models\ViewModels\PageViewModel.cs" />
+    <Compile Include="Models\ViewModels\UserActivityViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Media\" />
     <Folder Include="Models\Properties\" />
+    <Folder Include="Static\Ignobilis\Scripts\react\components\useractivity\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="modules\_protected\Shell\web.config" />
@@ -444,6 +450,7 @@
     <Content Include="Static\Ignobilis\Scripts\react\README.md" />
     <Content Include="Views\Ignobilis\Blocks\Menu\Index.cshtml" />
     <Content Include="Static\Ignobilis\Scripts\react\components\menu\data\menuMockData.json" />
+    <Content Include="Views\Ignobilis\Blocks\UserActivity\index.cshtml" />
     <None Include="_CreateNewNuGetPackage\DoNotModify\NuGet.exe" />
   </ItemGroup>
   <ItemGroup>

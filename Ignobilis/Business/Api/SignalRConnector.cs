@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Ignobilis.Models.Pages;
 using Microsoft.AspNet.SignalR;
 
@@ -58,9 +59,12 @@ namespace Ignobilis.Business.Api
                 _hub = context;
             }
 
-            public void SendConnectionInfo(UserActivityInformation info)
+            public void SendConnectionInfo(UserActivityInformation info, List<string> blockGroups)
             {
-                _hub.Clients.All.updateUsersOnlineCount(info);
+                foreach (var bGroup in blockGroups)
+                {
+                    _hub.Clients.Group(bGroup).updateUsersOnlineCount(info);
+                }                                
             }
             
         }

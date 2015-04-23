@@ -31,10 +31,6 @@
         $("#eventMessages").append('<div class="message ' + typ + '">' + icon + '<strong>' + message + '</strong><a target="_blank" href="' + url + '">Läs mer</a></div>');
     };
 
-    userHub.client.updateUsersOnlineCount = function(userinfo) {
-        console.log(userinfo);
-    }
-
     window.EventMessageHubJoinGroup = function (groupName) {
         $.connection.hub.start().done(function () {
             msg.server.joinGroup(groupName);

@@ -8,7 +8,7 @@ module.exports = {
         app: [
             'webpack-dev-server/client?http://localhost:8090',
             'webpack/hot/dev-server',
-            './src/components/root.js'
+            './components/root.js'
         ],
         vendor: ['react','lodash','pubsub-js','mcfly','node-uuid','classnames']
     },
@@ -63,7 +63,7 @@ module.exports = {
         new webpack.IgnorePlugin(/vertx/),
         new HtmlWebpackPlugin({
             title: 'Ignobilis apps',
-            template: 'src/index.html',
+            template: 'index.html',
             assets: {
                 'app': 'app.js',
                 'vendor': 'vendor.js'

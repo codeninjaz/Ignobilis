@@ -1,25 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Castle.Core.Internal;
+using Ignobilis.Business.Interfaces;
 using Microsoft.AspNet.SignalR;
 
 namespace Ignobilis.Business.Api
 {
-    public class UserActivityHub : Hub
+    public class UserActivityHub : Hub, IBlockHub
     {
         public delegate void HubOnConnected();
 
         private List<string> _userList = new List<string>();
         private Dictionary<string, List<string>> _groupWithUsers = new Dictionary<string, List<string>>();
+        private List<string> _blocks = new List<string>();
 
         public static UserActivityInformation Users = new UserActivityInformation {GroupConnections = new Dictionary<string, int>()};
 
+        public void JoinBlockGroup(string groupGuid)
+        {
+            Groups.Add(Context.ConnectionId, groupGuid);
+            _blocks.Add(groupGuid);
+            SignalRConnector.UserActivity.SendConnectionInfo(Users, _blocks);
+        }
+
+        public void LeaveBlockGroup(string groupGuid)
+        {
+            Groups.Remove(Context.ConnectionId, groupGuid);            
+        }
+
         public void JoinGroup(string groupName)
         {            
-            Groups.Add(Context.ConnectionId, groupName);
-            
             if (!_groupWithUsers.ContainsKey(groupName))
             {
                 _groupWithUsers.Add(groupName, new List<string>{ Context.ConnectionId });
@@ -35,9 +45,7 @@ namespace Ignobilis.Business.Api
         }
 
         public void LeaveGroup(string groupName)
-        {
-            Groups.Remove(Context.ConnectionId, groupName);
-            
+        {   
             if (!_groupWithUsers.ContainsKey(groupName)) return;
             if (!_groupWithUsers[groupName].Contains(Context.ConnectionId)) return;
 
@@ -56,18 +64,16 @@ namespace Ignobilis.Business.Api
                 Users.GroupConnections.Add(groupName, count);
             }
 
-            SignalRConnector.UserActivity.SendConnectionInfo(Users);
+            SignalRConnector.UserActivity.SendConnectionInfo(Users, _blocks);
         }
 
-
-        
         public override Task OnConnected()
         {
             var clientId = GetClientId();
             if (_userList.IndexOf(clientId) == -1) { _userList.Add(clientId); }
             Users.TotalNumberOfConnections = _userList.Count;
 
-            SignalRConnector.UserActivity.SendConnectionInfo(Users);
+            SignalRConnector.UserActivity.SendConnectionInfo(Users, _blocks);
 
             return base.OnConnected();
         }
@@ -78,7 +84,7 @@ namespace Ignobilis.Business.Api
             if (_userList.IndexOf(clientId) == -1) { _userList.Add(clientId); }
             Users.TotalNumberOfConnections = _userList.Count;
 
-            SignalRConnector.UserActivity.SendConnectionInfo(Users);
+            SignalRConnector.UserActivity.SendConnectionInfo(Users, _blocks);
 
             return base.OnReconnected();
         }        
@@ -89,7 +95,7 @@ namespace Ignobilis.Business.Api
             if (_userList.IndexOf(clientId) > -1) { _userList.Remove(clientId); }
             Users.TotalNumberOfConnections = _userList.Count;
 
-            SignalRConnector.UserActivity.SendConnectionInfo(Users);
+            SignalRConnector.UserActivity.SendConnectionInfo(Users, _blocks);
 
             return base.OnDisconnected(stopCalled);
         }
@@ -109,6 +115,8 @@ namespace Ignobilis.Business.Api
 
             return clientId;
         }
+        
+
     }
 
 
