@@ -6,7 +6,7 @@ namespace Ignobilis.Business.Api
     {
         public void JoinGroup(string groupName)
         {
-            Groups.Add(Context.ConnectionId, groupName);
+            Groups.Add(Context.ConnectionId, groupName);            
         }
 
         public void LeaveGroup(string groupName)

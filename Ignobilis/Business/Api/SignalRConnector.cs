@@ -1,31 +1,38 @@
 ﻿using System;
 using Ignobilis.Models.Pages;
 using Microsoft.AspNet.SignalR;
-using Microsoft.AspNet.SignalR.Hubs;
 
 namespace Ignobilis.Business.Api
 {
     public class SignalRConnector
     {
-        private readonly static Lazy<EventMessageConnector> _eventMessageInstance = 
-            new Lazy<EventMessageConnector>(() => new EventMessageConnector(GlobalHost.ConnectionManager.GetHubContext<EventMessageHub>().Clients));
+        private readonly static Lazy<EventMessageConnector> EventMessageInstance = 
+            new Lazy<EventMessageConnector>(() => new EventMessageConnector(GlobalHost.ConnectionManager.GetHubContext<EventMessageHub>()));
+
+        private readonly static Lazy<UserActivityConnector> UserActivityInstance =
+            new Lazy<UserActivityConnector>(() => new UserActivityConnector(GlobalHost.ConnectionManager.GetHubContext<UserActivityHub>()));
 
         public static EventMessageConnector EventMessage
         {
-            get { return _eventMessageInstance.Value; }
+            get { return EventMessageInstance.Value; }
+        }
+
+        public static UserActivityConnector UserActivity
+        {
+            get { return UserActivityInstance.Value; }
         }
 
         public class EventMessageConnector
         {
-            private readonly IHubConnectionContext<dynamic> _clients;
-            public EventMessageConnector(IHubConnectionContext<dynamic> context)
+            private readonly IHubContext _hub;
+            public EventMessageConnector(IHubContext context)
             {
-                _clients = context;
+                _hub = context;
             }
             
             public void Clear()
             {
-                _clients.All.clearMessages();
+                _hub.Clients.All.clearMessages();
             }
 
             public void Send(IB_EventMessage message)
@@ -34,13 +41,28 @@ namespace Ignobilis.Business.Api
 
                 if (string.IsNullOrEmpty(message.Group))
                 {
-                    _clients.All.broadcastMessage(message.Type, message.EventMessage, link.OriginalString);
+                    _hub.Clients.All.broadcastMessage(message.Type, message.EventMessage, link.OriginalString);
                 }
                 else
                 {
-                    _clients.Group(message.Group.ToLower()).broadcastMessage(message.Type, message.EventMessage, link.OriginalString);
+                    _hub.Clients.Group(message.Group.ToLower()).broadcastMessage(message.Type, message.EventMessage, link.OriginalString);
                 }
             }
+        }
+
+        public class UserActivityConnector
+        {
+            private readonly IHubContext _hub;
+            public UserActivityConnector(IHubContext context)
+            {
+                _hub = context;
+            }
+
+            public void SendConnectionInfo(UserActivityInformation info)
+            {
+                _hub.Clients.All.updateUsersOnlineCount(info);
+            }
+            
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿$(function () {
     var msg = $.connection.eventMessageHub;
+    var userHub = $.connection.userActivityHub;
 
     msg.client.clearMessages = function () {
         $("#eventMessages").html("");
@@ -30,9 +31,14 @@
         $("#eventMessages").append('<div class="message ' + typ + '">' + icon + '<strong>' + message + '</strong><a target="_blank" href="' + url + '">Läs mer</a></div>');
     };
 
+    userHub.client.updateUsersOnlineCount = function(userinfo) {
+        console.log(userinfo);
+    }
+
     window.EventMessageHubJoinGroup = function (groupName) {
         $.connection.hub.start().done(function () {
             msg.server.joinGroup(groupName);
+            userHub.server.joinGroup(groupName);
         });
     };
 });
