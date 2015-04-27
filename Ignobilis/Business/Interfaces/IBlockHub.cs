@@ -1,12 +1,10 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace Ignobilis.Business.Interfaces
 {
     public interface IBlockHub
     {
-        void JoinBlockGroup(string groupGuid);
-        void LeaveBlockGroup(string groupGuid);
-        void JoinGroup(string group);
-        void LeaveGroup(string group);
+        void JoinBlockGroups(List<string> groupGuids);
+        void LeaveBlockGroups(List<string> groupGuids);
     }
 }

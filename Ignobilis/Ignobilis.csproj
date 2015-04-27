@@ -365,7 +365,6 @@
   <ItemGroup>
     <Folder Include="Models\Media\" />
     <Folder Include="Models\Properties\" />
-    <Folder Include="Static\Ignobilis\Scripts\react\components\useractivity\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="modules\_protected\Shell\web.config" />
@@ -423,6 +422,7 @@
     <Content Include="Static\Ignobilis\Scripts\react\components\menu\root.js" />
     <Content Include="Static\Ignobilis\Scripts\react\components\renderview2.js" />
     <Content Include="Static\Ignobilis\Scripts\react\components\root.js" />
+    <Content Include="Static\Ignobilis\Scripts\react\components\useractivity\root.js" />
     <Content Include="Static\Ignobilis\Scripts\react\index.html" />
     <Content Include="Static\Ignobilis\Scripts\react\srv.js" />
     <Content Include="Static\Ignobilis\Scripts\react\webpack.config.js" />

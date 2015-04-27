@@ -6,11 +6,9 @@ module.exports = {
     //Delar upp genererad js i två filer, en för tredjeparts moduler (vendor) och en för min kod (app)
     entry: {
         app: [
-            'webpack-dev-server/client?http://localhost:8090',
-            'webpack/hot/dev-server',
             './components/root.js'
         ],
-        vendor: ['react','lodash','pubsub-js','mcfly','node-uuid','classnames']
+        vendor: ['react','lodash','mcfly']
     },
     //Skapa source maps för js filerna så att dev-tools kan länka till rätt källkod
     devtool: 'source-map',

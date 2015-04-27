@@ -63,7 +63,7 @@ namespace Ignobilis.Business.Api
             {
                 foreach (var bGroup in blockGroups)
                 {
-                    _hub.Clients.Group(bGroup).updateUsersOnlineCount(info);
+                    _hub.Clients.Group(bGroup).updateUsersOnlineCount(info, bGroup);
                 }                                
             }
             
