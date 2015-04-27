@@ -4,63 +4,57 @@ webpackJsonp_name_([0],{
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(4);
+	module.exports = __webpack_require__(3);
 
 
 /***/ },
 
-/***/ 4:
+/***/ 3:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
 	
-	var _React = __webpack_require__(3);
+	var _React = __webpack_require__(2);
 	
 	var _React2 = _interopRequireWildcard(_React);
 	
-	var _MenuRoot = __webpack_require__(7);
+	var _MenuRoot = __webpack_require__(6);
 	
 	var _MenuRoot2 = _interopRequireWildcard(_MenuRoot);
 	
-	var _UserActivityRoot = __webpack_require__(8);
+	var _UserActivityRoot = __webpack_require__(7);
 	
 	var _UserActivityRoot2 = _interopRequireWildcard(_UserActivityRoot);
 	
 	$(function () {
-	    var userActivityHub = $.connection.userActivityHub;
-	    var eventMessageHub = $.connection.eventMessageHub;
-	
 	    window.EventMessageHubJoinGroup = function (groupName) {
 	        $.connection.hub.start().done(function () {
-	            eventMessageHub.server.joinGroup(groupName);
+	            $.connection.eventMessageHub.server.joinGroup(groupName);
 	        });
 	    };
 	
 	    $.connection.hub.start().done(function () {
 	        var userActivities = [];
 	        $('.react-user-activity').each(function () {
-	            var id = $(this).attr('id');
-	            userActivities.push(id);
+	            userActivities.push($(this).attr('id'));
 	        });
 	
 	        if (userActivities.length > 0) {
-	            userActivityHub.server.joinBlockGroups(userActivities);
+	            $.connection.userActivityHub.server.joinBlockGroups(userActivities);
 	        }
 	    });
 	
-	    userActivityHub.client.updateUsersOnlineCount = function (userinfo, bGroup) {
-	        //console.log(bGroup);
-	        //console.log(userinfo);
-	        _React2['default'].render(_React2['default'].createElement(_UserActivityRoot2['default'], {
-	            users: userinfo }), document.getElementById(bGroup));
+	    $.connection.userActivityHub.client.updateUsersOnlineCount = function (userinfo, bGroup) {
+	        _React2['default'].render(_React2['default'].createElement(_UserActivityRoot2['default'], { users: userinfo }), document.getElementById(bGroup));
 	    };
 	
-	    eventMessageHub.client.clearMessages = function () {
+	    $.connection.eventMessageHub.client.clearMessages = function () {
 	        $('#eventMessages').html('');
 	    };
-	    eventMessageHub.client.broadcastMessage = function (typ, message, url) {
+	
+	    $.connection.eventMessageHub.client.broadcastMessage = function (typ, message, url) {
 	        var icon;
 	        switch (typ) {
 	            case 'emergency':
@@ -98,7 +92,7 @@ webpackJsonp_name_([0],{
 
 /***/ },
 
-/***/ 7:
+/***/ 6:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -117,15 +111,15 @@ webpackJsonp_name_([0],{
 	    value: true
 	});
 	
-	var _React = __webpack_require__(3);
+	var _React = __webpack_require__(2);
 	
 	var _React2 = _interopRequireWildcard(_React);
 	
-	var _Nav = __webpack_require__(35);
+	var _Nav = __webpack_require__(98);
 	
 	var _Nav2 = _interopRequireWildcard(_Nav);
 	
-	var _Store = __webpack_require__(36);
+	var _Store = __webpack_require__(99);
 	
 	var _Store2 = _interopRequireWildcard(_Store);
 	
@@ -176,7 +170,7 @@ webpackJsonp_name_([0],{
 
 /***/ },
 
-/***/ 8:
+/***/ 7:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -195,7 +189,7 @@ webpackJsonp_name_([0],{
 	    value: true
 	});
 	
-	var _React = __webpack_require__(3);
+	var _React = __webpack_require__(2);
 	
 	var _React2 = _interopRequireWildcard(_React);
 	
@@ -227,7 +221,7 @@ webpackJsonp_name_([0],{
 
 /***/ },
 
-/***/ 35:
+/***/ 98:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -246,7 +240,7 @@ webpackJsonp_name_([0],{
 	    value: true
 	});
 	
-	var _React = __webpack_require__(3);
+	var _React = __webpack_require__(2);
 	
 	var _React2 = _interopRequireWildcard(_React);
 	
@@ -254,7 +248,7 @@ webpackJsonp_name_([0],{
 	
 	var _import2 = _interopRequireWildcard(_import);
 	
-	var _Item = __webpack_require__(105);
+	var _Item = __webpack_require__(145);
 	
 	var _Item2 = _interopRequireWildcard(_Item);
 	
@@ -305,7 +299,7 @@ webpackJsonp_name_([0],{
 
 /***/ },
 
-/***/ 36:
+/***/ 99:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -316,15 +310,15 @@ webpackJsonp_name_([0],{
 	    value: true
 	});
 	
-	var _McFly = __webpack_require__(2);
+	var _McFly = __webpack_require__(5);
 	
 	var _McFly2 = _interopRequireWildcard(_McFly);
 	
-	var _Data = __webpack_require__(152);
+	var _Data = __webpack_require__(156);
 	
 	var _Data2 = _interopRequireWildcard(_Data);
 	
-	var _Const = __webpack_require__(107);
+	var _Const = __webpack_require__(146);
 	
 	var _Const2 = _interopRequireWildcard(_Const);
 	
@@ -345,7 +339,7 @@ webpackJsonp_name_([0],{
 
 /***/ },
 
-/***/ 105:
+/***/ 145:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -364,7 +358,7 @@ webpackJsonp_name_([0],{
 	    value: true
 	});
 	
-	var _React = __webpack_require__(3);
+	var _React = __webpack_require__(2);
 	
 	var _React2 = _interopRequireWildcard(_React);
 	
@@ -398,7 +392,7 @@ webpackJsonp_name_([0],{
 
 /***/ },
 
-/***/ 107:
+/***/ 146:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -409,7 +403,7 @@ webpackJsonp_name_([0],{
 
 /***/ },
 
-/***/ 152:
+/***/ 156:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {

@@ -11,7 +11,7 @@ namespace Ignobilis.Business.Api
         {
             foreach (var guid in groupGuids)
             {
-                Groups.Add(Context.ConnectionId, guid);
+                Groups.Add(GetClientId(), guid);
                 UserConnections.Instance.Blocks.Add(guid);
             }
 
@@ -22,7 +22,7 @@ namespace Ignobilis.Business.Api
         {
             foreach (var guid in groupGuids)
             {
-                Groups.Remove(Context.ConnectionId, guid); 
+                Groups.Remove(GetClientId(), guid); 
             }
         }
 
@@ -81,9 +81,6 @@ namespace Ignobilis.Business.Api
 
     public class UserConnections
     {
-        private List<string> _userList;
-        private List<string> _blocks;        
-
         private UserConnections()
         {
             UserActivity = new UserActivityInformation();

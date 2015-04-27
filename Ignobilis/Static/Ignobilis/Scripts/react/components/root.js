@@ -3,39 +3,30 @@ import MenuRoot from './menu/root';
 import UserActivityRoot from './useractivity/root';
 
 $(function() {
-    var userActivityHub = $.connection.userActivityHub;
-    var eventMessageHub = $.connection.eventMessageHub;
-
     window.EventMessageHubJoinGroup = function(groupName) {
         $.connection.hub.start().done(function() {
-            eventMessageHub.server.joinGroup(groupName);            
+            $.connection.eventMessageHub.server.joinGroup(groupName);            
         });
     };
 
     $.connection.hub.start().done(function() {
         var userActivities = [];
-        $('.react-user-activity').each(function() {
-            let id = $(this).attr('id');
-            userActivities.push(id);
-        });
+        $('.react-user-activity').each(function() { userActivities.push($(this).attr('id')); });
 
         if (userActivities.length > 0) {
-            userActivityHub.server.joinBlockGroups(userActivities);
+            $.connection.userActivityHub.server.joinBlockGroups(userActivities);
         }
     });
 
-    userActivityHub.client.updateUsersOnlineCount = function(userinfo, bGroup) {
-        //console.log(bGroup);
-        //console.log(userinfo);
-        React.render( < UserActivityRoot
-        users = { userinfo } /  > , document.getElementById(bGroup));
+    $.connection.userActivityHub.client.updateUsersOnlineCount = function(userinfo, bGroup) {
+        React.render(<UserActivityRoot users = { userinfo } />, document.getElementById(bGroup));
     }
 
-
-    eventMessageHub.client.clearMessages = function() {
+    $.connection.eventMessageHub.client.clearMessages = function() {
         $("#eventMessages").html("");
     }
-    eventMessageHub.client.broadcastMessage = function(typ, message, url) {
+
+    $.connection.eventMessageHub.client.broadcastMessage = function(typ, message, url) {
         var icon;
         switch (typ) {
         case "emergency":
