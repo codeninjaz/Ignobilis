@@ -3,19 +3,21 @@
 @model List<IContent>
 
 <section id="breadcrumb">
-    <span>
-        @Html.Raw(IgnobilisService.Instance.Settings.Functionality.BreadCrumb.Message)
-        @foreach (var item in Model.Select((value, i) => new { value, i }))
-        {
-            if (item.i + 1 < Model.Count)
+    <div>
+        <span>
+            @Html.Raw(IgnobilisService.Instance.Settings.Functionality.BreadCrumb.Message)
+            @foreach (var item in Model.Select((value, i) => new { value, i }))
             {
-                <span><a href="@item.value.PublicUrl()">@item.value.Name</a></span>
-                <span>@Html.Raw(IgnobilisService.Instance.Settings.Functionality.BreadCrumb.Seperator)</span>
+                if (item.i + 1 < Model.Count)
+                {
+                    <span><a href="@item.value.PublicUrl()">@item.value.Name</a></span>
+                    <span>@Html.Raw(IgnobilisService.Instance.Settings.Functionality.BreadCrumb.Seperator)</span>
+                }
+                else
+                {
+                    <span>@item.value.Name</span>
+                }
             }
-            else
-            {
-                <span>@item.value.Name</span>
-            }
-        }
-    </span>
+        </span>
+    </div>
 </section>

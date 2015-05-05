@@ -21,22 +21,24 @@
 
                              <div class="wrapper">
                                  <header>
-                                     <div id="logo">
-                                         <div class="helper">
-                                             <strong><a href="/">Tillbaka till start</a></strong>
-                                         </div>
-                                     </div>
-                                     @RenderSection("Header", false)
-
-                                     <div id="search">
-                                         <div class="column">
+                                     <div>
+                                         <div id="logo">
                                              <div class="helper">
-                                                 @Html.PropertyFor(m => Model.SettingsPage.PersonalizationContentArea)
+                                                 <strong><a href="/">Tillbaka till start</a></strong>
                                              </div>
                                          </div>
-                                         <div class="column">
-                                             <div class="helper">
-                                                 @Html.PropertyFor(m => Model.SettingsPage.SearchContentArea)
+                                         @RenderSection("Header", false)
+
+                                         <div id="search">
+                                             <div class="column">
+                                                 <div class="helper">
+                                                     @Html.PropertyFor(m => Model.SettingsPage.PersonalizationContentArea)
+                                                 </div>
+                                             </div>
+                                             <div class="column">
+                                                 <div class="helper">
+                                                     @Html.PropertyFor(m => Model.SettingsPage.SearchContentArea)
+                                                 </div>
                                              </div>
                                          </div>
                                      </div>

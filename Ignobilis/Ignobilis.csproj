@@ -394,6 +394,8 @@
     <Content Include="Static\Ignobilis\css\_variables.scss" />
     <Content Include="Static\Ignobilis\Scripts\generated\app.js.map" />
     <Content Include="Static\Ignobilis\Scripts\generated\vendor.js.map" />
+    <Content Include="Static\Ignobilis\css\_theme_2.scss" />
+    <Content Include="Static\Ignobilis\css\_theme_3.scss" />
     <None Include="Static\Ignobilis\Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Static\Ignobilis\fonts\fontawesome-webfont.svg" />
     <Content Include="Static\Ignobilis\Scripts\EventMessageHub.js" />
@@ -497,10 +499,12 @@
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>REM Create a NuGet package for this project and place the .nupkg file in the project's output directory.
-REM If you see this in Visual Studio's Error List window, check the Output window's Build tab for the actual error.
-ECHO Creating NuGet package in Post-Build event...
-PowerShell -NoProfile -ExecutionPolicy Bypass -Command "&amp; '$(ProjectDir)_CreateNewNuGetPackage\DoNotModify\CreateNuGetPackage.ps1' -ProjectFilePath '$(ProjectPath)' -OutputDirectory '$(TargetDir)' -BuildConfiguration '$(ConfigurationName)' -BuildPlatform '$(PlatformName)'"</PostBuildEvent>
+    <PostBuildEvent>REM PowerShell -NoProfile -ExecutionPolicy Bypass -Command "&amp; '$(ProjectDir)
+REM _CreateNewNuGetPackage\DoNotModify\CreateNuGetPackage.ps1' -ProjectFilePath 
+REM '$(ProjectPath)' -OutputDirectory '$(TargetDir)' -BuildConfiguration 
+REM '$(ConfigurationName)' -BuildPlatform '$(PlatformName)'"
+
+xcopy "$(ProjectDir)Static\Ignobilis\css\Base.css" "C:\Users\johobr\Documents\Visual Studio 2012\Projects\TFS\InsiktenUtsikten\Main_epi8\Source\InsiktenUtsikten\Static\Ignobilis\css\Base.css" /Y /I</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>

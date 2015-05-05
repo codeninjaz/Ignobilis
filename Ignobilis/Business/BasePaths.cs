@@ -22,7 +22,7 @@ namespace Ignobilis.Business
 
         private List<string> _cssList = new List<string>
                                         {
-                                            "/Static/Ignobilis/css/Base.min.css"
+                                            "/Static/Ignobilis/css/Base.css"
                                         }; 
         public List<string> CssList { get { return _cssList; } set { _cssList = value; } }
 

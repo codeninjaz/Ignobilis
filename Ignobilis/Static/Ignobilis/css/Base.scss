@@ -30,355 +30,350 @@ $secondary-darker:  darken($secondary-color, 30);
 @import 'font-awesome.scss';
 @import '_normalize.scss';
 @import '_flashy.scss';
+@import '_theme_1.scss';
+@import '_theme_2.scss';
+@import '_theme_3.scss';
 
-.Ignobilis{
-    html, body, h1, h2, h3, p{margin: 0; padding: 0;}
-    html, body{line-height: $size-large; height: 100%; font-size: $size;}
+html, body, h1, h2, h3, p{margin: 0; padding: 0;}
+html, body{line-height: $size-large; height: 100%; font-size: $size;}
 
-    p {
-      margin-bottom: $size;  
-    }
+p {
+    margin-bottom: $size;  
+}
 
-    .message {
-        padding: $size;        
+.message {
+    padding: $size;        
 
-        strong {
-            margin-right: $size;
-        }
-    }
-
-    .emergency{
-        background-color: $event-color-1;
-        color: white;
-    }
-
-    .information {
-        background-color: $event-color-2;
-    }
-
-    .warning {
-        background-color: $event-color-3;
-    }
-
-    .error {
-        background-color: $event-color-4;
-    }
-
-    .default {
-        background-color: $event-color-5;
-    }
-
-    .wrapper{
-        position: relative;
-        width: 90%;
-        border: $border-size solid $base-light;
-        margin: $size-large auto;        
-        header{
-          height: $size-huge;
-
-          #logo{
-              width:20%; height: $size-huge; float: left;
-          }
-
-          #search{
-              width:40%; float: right; height: $size-huge;
-              .column{
-                  width:50%; float:left;
-
-              }
-          }
-        }
-
-    .helper{
-    padding: $size;
-    }
-
-    article{
-        header{
-            height: auto;
-        }
-    }
-    
-    //viewmode 1-columns
-    #onecolumncontainer1{
-        float: left;
-        width: 100%;
-        position: relative;        
-        min-height: $size-huge*8;
-        .helper{
-            padding: $size;
-        }
-        #column-one{
-            float: left;
-            width: 100%;
-            position: relative;
-            left: 100%;
-            overflow: hidden;
-        }
-    }    
-
-    //viewmode 2-columns
-    #twocolumnscontainer2{
-        clear: left;
-        float: left;
-        width: 100%;
-        position: relative;             
-        border-right: $border-size solid $secondary-light;
-    }
-    #twocolumnscontainer1{
-        float: left;
-        width: 100%;
-        position: relative;
-        right: $column-two-size+$column-one-size;        
-        border-right: $border-size solid $secondary-light;
-        min-height: $size-huge*8;
-        #column-one{
-            float: left;
-            width: $column-one-size;
-            position: relative;
-            left: 100%-$column-one-size;
-            overflow: hidden;
-        }
-        #column-two{
-            float: left;
-            width: $column-one-size+$column-two-size;
-            position: relative;
-            left: 100%-$column-one-size;
-            overflow: hidden;
-        }
-    }
-    
-
-    //viewmode 3-columns
-    #threecolumnscontainer3{
-        clear: left;
-        float: left;
-        width: 100%;
-        overflow: hidden;
-    }
-    #threecolumnscontainer2{
-        clear: left;
-        float: left;
-        width: 100%;
-        position: relative;
-        right: $column-three-size;        
-        border-right: $border-size solid $secondary-light;
-    }
-    #threecolumnscontainer1{
-        float: left;
-        width: 100%;
-        position: relative;
-        right: $column-two-size;        
-        border-right: $border-size solid $secondary-light;
-        min-height: $size-huge*8;
-
-        #column-one{
-            float: left;
-            width: $column-one-size;
-            position: relative;
-            left: 100%-$column-one-size;
-            overflow: hidden;
-
-            a {
-            display: block;
-            padding-right: $size-small;
-            padding-left: $size-small;
-            }
-      
-            a.active {
-                background-color: $base-light;
-            }
-
-            .helper{
-                padding: $size;
-            }
-        }
-
-        #column-two{
-          float:left;          
-          width: $column-two-size;
-          position: relative;
-          left: 100%-$column-one-size;   
-          overflow: hidden;
-
-          .helper{
-                padding:$size; 
-                border-left: $border-size solid $secondary-light;
-          }
-        }
-
-        #column-three{
-            float: left;
-            width: $column-three-size;
-            position: relative;
-            left: 100%-$column-one-size;
-            overflow: hidden;     
-        }
-    }
-
-    //viewmode 4-columns
-    #fourcolumnscontainer4{
-        clear: left;
-        float: left;
-        width: 100%;
-        overflow: hidden;
-    }
-    #fourcolumnscontainer3{
-        clear: left;
-        float: left;
-        width: 100%;
-        position: relative;
-        right: $column-three-size;        
-        border-right: $border-size solid $secondary-light;
-    }
-    #fourcolumnscontainer2{
-        clear: left;
-        float: left;
-        width: 100%;
-        position: relative;
-        right: $column-three-size;        
-        border-right: $border-size solid $secondary-light;
-    }
-    #fourcolumnscontainer1{
-        clear: left;
-        float: left;
-        width: 100%;
-        position: relative;
-        right: $column-three-size*2;        
-        border-right: $border-size solid $secondary-light;
-        min-height: $size-huge*8;
-        .helper{
-            padding: $size;
-        }
-
-        #column-one{
-            float: left;
-            width: $column-one-size;
-            position: relative;
-            left: 100%-$column-one-size;
-            overflow: hidden;
-        }
-        #column-two{
-            float: left;
-            width: $column-three-size*2;
-            position: relative;
-            left: 100%-$column-one-size;
-            overflow: hidden;
-        }
-        #column-three{
-            float: left;
-            width: $column-one-size;
-            position: relative;
-            left: 100%-$column-one-size;
-            overflow: hidden;
-        }
-        #column-four{
-            float: left;
-            width: $column-one-size;
-            position: relative;
-            left: 100%-$column-one-size;
-            overflow: hidden;
-        }
-    }
-        
-    #main-menu{
-      border-bottom: $border-size solid $base-darker;      
-      a {
-        padding: $size-small;
-        margin-left: $size-small;
-        border-top: $border-size solid $base-darker;
-        border-left: $border-size solid $base-darker;
-        border-right: $border-size solid $base-darker;
-        border-top-left-radius: $size-small;
-        border-top-right-radius: $size-small;
-        position:relative;
-        bottom: $border-size;
-        text-decoration: none;
-      }
-      
-      .active
-      {
-        background-color: $base-light;
-        border-bottom: $border-size solid $base-light;
-      }
-    }
-    
-    #secondary-menu{
-      padding-top: $size;
-      border-bottom: $border-size solid $base-darker;
-      border-left: $border-size solid $base-darker;      
-      border-right: $border-size solid $base-darker;
-      background-color: $base-light;
-      a {        
-        padding: $size-small;
-        margin-left: $size-small;
-        border: $border-size solid $base-darker;
-        border-top-left-radius: $size-small;
-        border-top-right-radius: $size-small;
-        position:relative;
-        bottom: $border-size;
-        text-decoration: none;
-      }
-
-      .active{
-        background-color: $secondary-light;
-        border-bottom: $border-size solid $secondary-light;
-      }
-    }
-    
-    #breadcrumb{
-        background-color: $secondary-light;
-        border-bottom: $border-size solid $base-darker;
-        border-left: $border-size solid $base-darker;      
-        border-right: $border-size solid $base-darker;
-          span{
-            margin-left: $size-small;
-          }
-          .right{
-            float: right;
-            margin-right: $size-small;
-          }
-    }
-
-    footer {
-      background-color: $secondary-light;
-      border: $border-size solid $base-darker;      
-      width: 100%;  
-      clear: both;
-    }
-
-    //block
-    .puff{
-        border: $border-size solid $base-light;
-        margin-bottom: $size;
-        border-radius: $size-small;
-
-        strong{
-            display: block;
-            border-top-left-radius: $size-small;
-            border-top-right-radius: $size-small;
-            background-color: $secondary-light;
-            border-bottom: $base-light;
-            padding-left: $size;
-            padding-right: $size;
-        }
-    }
-
+    strong {
+        margin-right: $size;
     }
 }
 
+.emergency{
+    background-color: $event-color-1;
+    color: white;
+}
 
+.information {
+    background-color: $event-color-2;
+}
+
+.warning {
+    background-color: $event-color-3;
+}
+
+.error {
+    background-color: $event-color-4;
+}
+
+.default {
+    background-color: $event-color-5;
+}
+
+.wrapper{
+    position: relative;
+    width: 90%;
+    border: $border-size solid $base-light;
+    margin: $size-large auto;        
+    header{
+        height: $size-huge;
+
+        #logo{
+            width:20%; height: $size-huge; float: left;
+        }
+
+        #search{
+            width:40%; float: right; height: $size-huge;
+            .column{
+                width:50%; float:left;
+            }
+        }
+    }
+
+.helper{
+padding: $size;
+}
+
+article{
+    header{
+        height: auto;
+    }
+}
+    
+//viewmode 1-columns
+#onecolumncontainer1{
+    float: left;
+    width: 100%;
+    position: relative;        
+    min-height: $size-huge*8;
+    .helper{
+        padding: $size;
+    }
+    #column-one{
+        float: left;
+        width: 100%;
+        position: relative;
+        left: 100%;
+        overflow: hidden;
+    }
+}    
+
+//viewmode 2-columns
+#twocolumnscontainer2{
+    clear: left;
+    float: left;
+    width: 100%;
+    position: relative;             
+    border-right: $border-size solid $secondary-light;
+}
+#twocolumnscontainer1{
+    float: left;
+    width: 100%;
+    position: relative;
+    right: $column-two-size+$column-one-size;        
+    border-right: $border-size solid $secondary-light;
+    min-height: $size-huge*8;
+    #column-one{
+        float: left;
+        width: $column-one-size;
+        position: relative;
+        left: 100%-$column-one-size;
+        overflow: hidden;
+    }
+    #column-two{
+        float: left;
+        width: $column-one-size+$column-two-size;
+        position: relative;
+        left: 100%-$column-one-size;
+        overflow: hidden;
+    }
+}
+    
+
+//viewmode 3-columns
+#threecolumnscontainer3{
+    clear: left;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+}
+#threecolumnscontainer2{
+    clear: left;
+    float: left;
+    width: 100%;
+    position: relative;
+    right: $column-three-size;        
+    border-right: $border-size solid $secondary-light;
+}
+#threecolumnscontainer1{
+    float: left;
+    width: 100%;
+    position: relative;
+    right: $column-two-size;        
+    border-right: $border-size solid $secondary-light;
+    min-height: $size-huge*8;
+
+    #column-one{
+        float: left;
+        width: $column-one-size;
+        position: relative;
+        left: 100%-$column-one-size;
+        overflow: hidden;
+
+        a {
+        display: block;
+        padding-right: $size-small;
+        padding-left: $size-small;
+        }
+      
+        a.active {
+            background-color: $base-light;
+        }
+
+        .helper{
+            padding: $size;
+        }
+    }
+
+    #column-two{
+        float:left;          
+        width: $column-two-size;
+        position: relative;
+        left: 100%-$column-one-size;   
+        overflow: hidden;
+
+        .helper{
+            padding:$size; 
+            border-left: $border-size solid $secondary-light;
+        }
+    }
+
+    #column-three{
+        float: left;
+        width: $column-three-size;
+        position: relative;
+        left: 100%-$column-one-size;
+        overflow: hidden;     
+    }
+}
+
+//viewmode 4-columns
+#fourcolumnscontainer4{
+    clear: left;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+}
+#fourcolumnscontainer3{
+    clear: left;
+    float: left;
+    width: 100%;
+    position: relative;
+    right: $column-three-size;        
+    border-right: $border-size solid $secondary-light;
+}
+#fourcolumnscontainer2{
+    clear: left;
+    float: left;
+    width: 100%;
+    position: relative;
+    right: $column-three-size;        
+    border-right: $border-size solid $secondary-light;
+}
+#fourcolumnscontainer1{
+    clear: left;
+    float: left;
+    width: 100%;
+    position: relative;
+    right: $column-three-size*2;        
+    border-right: $border-size solid $secondary-light;
+    min-height: $size-huge*8;
+    .helper{
+        padding: $size;
+    }
+
+    #column-one{
+        float: left;
+        width: $column-one-size;
+        position: relative;
+        left: 100%-$column-one-size;
+        overflow: hidden;
+    }
+    #column-two{
+        float: left;
+        width: $column-three-size*2;
+        position: relative;
+        left: 100%-$column-one-size;
+        overflow: hidden;
+    }
+    #column-three{
+        float: left;
+        width: $column-one-size;
+        position: relative;
+        left: 100%-$column-one-size;
+        overflow: hidden;
+    }
+    #column-four{
+        float: left;
+        width: $column-one-size;
+        position: relative;
+        left: 100%-$column-one-size;
+        overflow: hidden;
+    }
+}
+        
+#main-menu{
+    border-bottom: $border-size solid $base-darker;      
+    a {
+    padding: $size-small;
+    margin-left: $size-small;
+    border-top: $border-size solid $base-darker;
+    border-left: $border-size solid $base-darker;
+    border-right: $border-size solid $base-darker;
+    border-top-left-radius: $size-small;
+    border-top-right-radius: $size-small;
+    position:relative;
+    bottom: $border-size;
+    text-decoration: none;
+    }
+      
+    .active
+    {
+    background-color: $base-light;
+    border-bottom: $border-size solid $base-light;
+    }
+}
+    
+#secondary-menu{
+    padding-top: $size;
+    border-bottom: $border-size solid $base-darker;
+    border-left: $border-size solid $base-darker;      
+    border-right: $border-size solid $base-darker;
+    background-color: $base-light;
+    a {        
+    padding: $size-small;
+    margin-left: $size-small;
+    border: $border-size solid $base-darker;
+    border-top-left-radius: $size-small;
+    border-top-right-radius: $size-small;
+    position:relative;
+    bottom: $border-size;
+    text-decoration: none;
+    }
+
+    .active{
+    background-color: $secondary-light;
+    border-bottom: $border-size solid $secondary-light;
+    }
+}
+    
+#breadcrumb{
+    background-color: $secondary-light;
+    border-bottom: $border-size solid $base-darker;
+    border-left: $border-size solid $base-darker;      
+    border-right: $border-size solid $base-darker;
+        span{
+        margin-left: $size-small;
+        }
+        .right{
+        float: right;
+        margin-right: $size-small;
+        }
+}
+
+footer {
+    background-color: $secondary-light;
+    border: $border-size solid $base-darker;      
+    width: 100%;  
+    clear: both;
+}
+
+//block
+.puff{
+    border: $border-size solid $base-light;
+    margin-bottom: $size;
+    border-radius: $size-small;
+
+    strong{
+        display: block;
+        border-top-left-radius: $size-small;
+        border-top-right-radius: $size-small;
+        background-color: $secondary-light;
+        border-bottom: $base-light;
+        padding-left: $size;
+        padding-right: $size;
+    }
+}
+
+}
 
 @media(min-width: 1300px){
- .Ignobilis{
   .wrapper{
     
-  }
   }
 }
 
 @media(max-width: 1299px) and (min-width: 850px){
-.Ignobilis{
     .wrapper{
         position: relative;
         width: 100%;
@@ -403,101 +398,98 @@ $secondary-darker:  darken($secondary-color, 30);
         }
     }
 }
-}
 
 @media(max-width: 849px) and (min-width: 0){
-.Ignobilis{
-    .wrapper{
-        position: relative;
-        width: 100%;
-        border-top: 0;
+.wrapper{
+    position: relative;
+    width: 100%;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin: 0;
+
+    header{
+        height: $size-large*2;
+        #logo{
+            height: $size-large*2;
+        }
+        #search{
+            height: $size-large*2;
+        }
+    }
+
+    #fourcolumnscontainer4{
+        border-right: 0;
+    }
+
+    #fourcolumnscontainer3{
+        border-right: 0;
+    }
+
+    #fourcolumnscontainer2{
+        border-right: 0;
+    }
+
+    #fourcolumnscontainer1{
+        border-right: 0;
+
+        .helper{
+            padding: 0 $size-small 0 $size-small;
+        }
+
+        #column-one{
+            float: none;
+            width: 100%;
+        }
+
+        #column-two{
+            float:none;
+            width: 100%;
+        }
+        #column-three {
+            float: none;
+            width: 100%;
+        }
+        #column-four{
+            float:none;
+            width: 100%;
+        }
+    }
+
+    #main-menu{
+        border-bottom: 0;
+        a {
+        padding: $size-small;
+        margin-left: 0;
+        border-top: $border-size solid $base-darker;
         border-left: 0;
         border-right: 0;
-        margin: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        position:relative;
+        bottom: 0;
+        display:block;
+        }
+    }
 
-        header{
-            height: $size-large*2;
-            #logo{
-                height: $size-large*2;
-            }
-            #search{
-                height: $size-large*2;
-            }
+    #secondary-menu{
+        padding-top: 0;
+        a {
+        background-color: $secondary-light;
+        padding: $size-small;
+        margin-left: 0;
+        border: 0;
+        border-top: $border-size solid $base-darker;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        position:relative;
+        bottom: 0;
+        display: block;    
         }
 
-        #fourcolumnscontainer4{
-            border-right: 0;
-        }
-
-        #fourcolumnscontainer3{
-            border-right: 0;
-        }
-
-        #fourcolumnscontainer2{
-            border-right: 0;
-        }
-
-        #fourcolumnscontainer1{
-            border-right: 0;
-
-            .helper{
-                padding: 0 $size-small 0 $size-small;
-            }
-
-            #column-one{
-                float: none;
-                width: 100%;
-            }
-
-            #column-two{
-                float:none;
-                width: 100%;
-            }
-            #column-three {
-                float: none;
-                width: 100%;
-            }
-            #column-four{
-                float:none;
-                width: 100%;
-            }
-        }
-
-        #main-menu{
-          border-bottom: 0;
-          a {
-            padding: $size-small;
-            margin-left: 0;
-            border-top: $border-size solid $base-darker;
-            border-left: 0;
-            border-right: 0;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            position:relative;
-            bottom: 0;
-            display:block;
-          }
-        }
-
-        #secondary-menu{
-            padding-top: 0;
-            a {
-            background-color: $secondary-light;
-            padding: $size-small;
-            margin-left: 0;
-            border: 0;
-            border-top: $border-size solid $base-darker;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            position:relative;
-            bottom: 0;
-            display: block;    
-            }
-
-            .active{
-            background-color: $base-lighter;
-            border-bottom: $border-size solid $base-darker;
-            }
+        .active{
+        background-color: $base-lighter;
+        border-bottom: $border-size solid $base-darker;
         }
     }
 }

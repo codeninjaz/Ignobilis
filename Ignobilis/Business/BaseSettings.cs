@@ -13,14 +13,11 @@ namespace Ignobilis.Business
             Paths = new BasePaths();
             Functionality = new BaseFunctionality();
             ProfileType = typeof (PublicProfile);
+            CssClasses = new List<string>();
         }
         public IPaths Paths { get; set; }
 
-        private List<string> _cssClasses = new List<string>()
-                                           {
-                                               "Ignobilis"
-                                           };
-        public List<string> CssClasses { get { return _cssClasses; } set { _cssClasses = value; } }
+        public List<string> CssClasses { get; set;}
 
         private Dictionary<Type, String> _pageGroupsDictionary = 
             new Dictionary<Type, string>()
@@ -35,11 +32,7 @@ namespace Ignobilis.Business
 
         private List<String> _tabNamesList = new List<string>()
                                              {
-                                                 "Innehålla",
-                                                 "Area",
-                                                 "LM.sea",
-                                                 "Insikten",
-                                                 "Geodata",
+                                                 "Innehåll",
                                                  "Avancerade inställningar"
                                              };
 
