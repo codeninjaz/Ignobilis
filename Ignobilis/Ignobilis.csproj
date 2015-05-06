@@ -331,6 +331,7 @@
     <Compile Include="Business\Interfaces\ITheme.cs" />
     <Compile Include="Business\Interfaces\IViewMode.cs" />
     <Compile Include="Business\Util.cs" />
+    <Compile Include="Controllers\ImageBlockController.cs" />
     <Compile Include="Controllers\UserActivityBlockController.cs" />
     <Compile Include="Controllers\MenuBlockController.cs" />
     <Compile Include="Controllers\ListBlockController.cs" />
@@ -342,6 +343,7 @@
     <Compile Include="Business\Attributes\SiteContentType.cs" />
     <Compile Include="Business\Attributes\SiteImageUrl.cs" />
     <Compile Include="Models\Blocks\IB_BaseBlock.cs" />
+    <Compile Include="Models\Blocks\IB_ImageBlock.cs" />
     <Compile Include="Models\Blocks\IB_EditorialBlock.cs" />
     <Compile Include="Models\Blocks\IB_MenuBlock.cs" />
     <Compile Include="Models\Blocks\IB_UserActivityBlock.cs" />
@@ -453,6 +455,7 @@
     <Content Include="Views\Ignobilis\Blocks\Menu\Index.cshtml" />
     <Content Include="Static\Ignobilis\Scripts\react\components\menu\data\menuMockData.json" />
     <Content Include="Views\Ignobilis\Blocks\UserActivity\index.cshtml" />
+    <Content Include="Views\Ignobilis\Blocks\Image\index.cshtml" />
     <None Include="_CreateNewNuGetPackage\DoNotModify\NuGet.exe" />
   </ItemGroup>
   <ItemGroup>

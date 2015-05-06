@@ -11,7 +11,7 @@
 <article>
     <header>
         <h1 @Html.EditAttributes(x => x.CurrentPage.Headline)>@Model.CurrentPage.Headline</h1>
-        @Html.PropertyFor(m => m.CurrentPage.Ingress)
+        <p>@Html.PropertyFor(m => m.CurrentPage.Ingress)</p>
     </header>
     <div>
         @Html.PropertyFor(m => m.CurrentPage.Image)

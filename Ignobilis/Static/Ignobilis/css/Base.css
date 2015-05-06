@@ -2182,23 +2182,57 @@ th {
 .Theme-1 body {
   font-family: 'Open Sans', Helvetica, sans-serif;
   color: black; }
+.Theme-1 h1, .Theme-1 h2, .Theme-1 h3 {
+  font-family: Georgia; }
+.Theme-1 h2 {
+  font-size: 19.5px;
+  margin-bottom: 9.75px;
+  margin-top: 19.5px; }
+.Theme-1 p {
+  font-size: 13px;
+  line-height: 19.5px; }
 .Theme-1 .wrapper {
   width: 100%;
-  margin: 0; }
+  margin: 0;
+  border: 0; }
+  .Theme-1 .wrapper article header {
+    height: auto; }
+    .Theme-1 .wrapper article header p {
+      font-size: 15.6px;
+      line-height: 22px; }
   .Theme-1 .wrapper header {
+    background-color: white;
     height: 95px; }
-    .Theme-1 .wrapper header div:first-child {
-      width: 960px;
-      margin: 0 auto; }
+    .Theme-1 .wrapper header .helper {
+      width: 59%;
+      margin: 0 auto;
+      padding: 0; }
+      .Theme-1 .wrapper header .helper .image-block {
+        padding-top: 30px;
+        float: left; }
+        .Theme-1 .wrapper header .helper .image-block img {
+          width: auto; }
+    .Theme-1 .wrapper header h1 {
+      border: 1px solid #bfbfbf;
+      padding: 12px;
+      margin-bottom: 12px;
+      font-size: 32.5px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: normal;
+      line-height: 35px; }
+  .Theme-1 .wrapper #logo {
+    height: auto;
+    margin-top: 33px; }
   .Theme-1 .wrapper #main-menu {
     height: 59px;
     background: linear-gradient(#7ab800, #b8d979);
     border-top: #7ab800 1px solid;
     border-bottom: #7ab800 1px solid; }
     .Theme-1 .wrapper #main-menu div {
-      width: 960px;
+      width: 59%;
       margin: 0 auto;
-      bottom: -33px;
+      bottom: -34px;
       position: relative; }
       .Theme-1 .wrapper #main-menu div a {
         font-size: 13px;
@@ -2217,7 +2251,7 @@ th {
         padding-top: 10px;
         padding-right: 16px;
         padding-left: 16px;
-        bottom: 5px;
+        bottom: 7px;
         font-weight: bold;
         border-bottom: 1px solid white; }
   .Theme-1 .wrapper #secondary-menu {
@@ -2228,10 +2262,10 @@ th {
     border-left: 0;
     border-right: 0; }
     .Theme-1 .wrapper #secondary-menu div {
-      width: 960px;
+      width: 59%;
       margin: 0 auto;
       position: relative;
-      bottom: -12px; }
+      bottom: -13px; }
       .Theme-1 .wrapper #secondary-menu div a {
         color: #000;
         background-image: linear-gradient(to bottom, white, white 1%, #eaeaea 5%);
@@ -2254,14 +2288,180 @@ th {
     border: 0;
     background-color: white; }
     .Theme-1 .wrapper #breadcrumb div {
-      width: 544px;
+      width: 33%;
       margin: 0 auto; }
+    .Theme-1 .wrapper #breadcrumb span {
+      margin-left: 12px; }
   .Theme-1 .wrapper #threecolumnscontainer1 {
-    right: 30%; }
+    right: 33%;
+    border-right: 0; }
+    .Theme-1 .wrapper #threecolumnscontainer1 #column-one {
+      width: 13%;
+      left: 87%; }
+      .Theme-1 .wrapper #threecolumnscontainer1 #column-one .helper:first-child {
+        padding: 0 12px 12px 0; }
     .Theme-1 .wrapper #threecolumnscontainer1 #column-two {
-      width: 30%; }
+      width: 33%;
+      left: 87%; }
+      .Theme-1 .wrapper #threecolumnscontainer1 #column-two .helper {
+        border-left: 0;
+        padding: 0; }
+    .Theme-1 .wrapper #threecolumnscontainer1 #column-three {
+      width: 13%;
+      left: 87%; }
+      .Theme-1 .wrapper #threecolumnscontainer1 #column-three .helper:first-child {
+        padding: 0 0 12px 12px;
+        padding-bottom: 12px; }
   .Theme-1 .wrapper #threecolumnscontainer2 {
-    right: 38%; }
+    right: 33.5%;
+    border-right: 0; }
+  .Theme-1 .wrapper #threecolumnscontainer3 {
+    background-color: white; }
+  .Theme-1 .wrapper footer {
+    background-color: white;
+    border: 0;
+    width: auto;
+    height: 141px; }
+    .Theme-1 .wrapper footer div {
+      width: 59%;
+      margin: 0 auto;
+      border: 1px solid #7ab800;
+      border-radius: 6px;
+      background-color: #ebf4dc; }
+  .Theme-1 .wrapper .puff {
+    border: 1px solid #bfbfbf;
+    border-radius: 6px; }
+    .Theme-1 .wrapper .puff strong {
+      border-bottom: 1px solid #bfbfbf;
+      line-height: 30px;
+      background-color: white;
+      text-transform: uppercase;
+      font-weight: normal; }
+    .Theme-1 .wrapper .puff img {
+      width: 100%;
+      display: block; }
+    .Theme-1 .wrapper .puff a {
+      display: block; }
+    .Theme-1 .wrapper .puff .helper {
+      line-height: normal; }
+  .Theme-1 .wrapper .recursive-menu strong {
+    display: block;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border: 1px solid #7ab800;
+    line-height: 30px;
+    background-image: linear-gradient(to right, #b2d66c, #82bc10);
+    text-transform: uppercase;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: white;
+    font-weight: normal; }
+  .Theme-1 .wrapper .recursive-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid #bfbfbf;
+    border-right: 1px solid #bfbfbf;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px; }
+    .Theme-1 .wrapper .recursive-menu ul li {
+      border-bottom: 1px solid #e4e4e4;
+      border-top: 1px solid #fff;
+      margin: 0;
+      padding: 0;
+      vertical-align: top; }
+      .Theme-1 .wrapper .recursive-menu ul li a {
+        text-decoration: none;
+        color: black;
+        line-height: 30px; }
+    .Theme-1 .wrapper .recursive-menu ul li:last-child {
+      border-bottom: 0; }
+  .Theme-1 .wrapper .image-block img {
+    width: 100%;
+    display: block; }
+@media (max-width: 1299px) and (min-width: 850px) {
+  .Theme-1 .wrapper #main-menu div {
+    width: 97%; }
+  .Theme-1 .wrapper #secondary-menu div {
+    width: 97%; }
+  .Theme-1 .wrapper header .helper {
+    width: 97%; }
+  .Theme-1 .wrapper #breadcrumb div {
+    width: 60%; }
+  .Theme-1 .wrapper #threecolumnscontainer1 {
+    right: 60%; }
+    .Theme-1 .wrapper #threecolumnscontainer1 #column-one {
+      width: 19%;
+      left: 81%; }
+    .Theme-1 .wrapper #threecolumnscontainer1 #column-two {
+      width: 60%;
+      left: 81%; }
+    .Theme-1 .wrapper #threecolumnscontainer1 #column-three {
+      width: 19%;
+      left: 81%; }
+  .Theme-1 .wrapper #threecolumnscontainer2 {
+    right: 20%; } }
+@media (max-width: 849px) and (min-width: 0) {
+  .Theme-1 .wrapper header {
+    height: 30px; }
+    .Theme-1 .wrapper header .helper {
+      width: 97%; }
+      .Theme-1 .wrapper header .helper .image-block {
+        padding-top: 6px; }
+        .Theme-1 .wrapper header .helper .image-block img {
+          width: 75%; }
+  .Theme-1 .wrapper #main-menu {
+    height: auto; }
+    .Theme-1 .wrapper #main-menu div {
+      width: 97%;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      position: relative;
+      bottom: auto; }
+      .Theme-1 .wrapper #main-menu div a.active {
+        bottom: 0; }
+      .Theme-1 .wrapper #main-menu div a:last-child {
+        border-bottom: 1px solid #7ab800; }
+  .Theme-1 .wrapper #secondary-menu {
+    height: auto;
+    padding-bottom: 12px;
+    padding-top: 12px; }
+    .Theme-1 .wrapper #secondary-menu div {
+      width: 97%;
+      bottom: auto; }
+      .Theme-1 .wrapper #secondary-menu div a:last-child {
+        border-bottom: 1px solid #bfbfbf; }
+  .Theme-1 .wrapper #breadcrumb div {
+    width: 97%; }
+  .Theme-1 .wrapper #threecolumnscontainer3 {
+    right: 0; }
+  .Theme-1 .wrapper #threecolumnscontainer2 {
+    right: 0; }
+  .Theme-1 .wrapper #threecolumnscontainer1 {
+    right: 0; }
+    .Theme-1 .wrapper #threecolumnscontainer1 #column-one {
+      width: 97%;
+      left: auto;
+      float: none;
+      margin: 0 auto; }
+      .Theme-1 .wrapper #threecolumnscontainer1 #column-one .helper:first-child {
+        padding: 0 0 12px 0; }
+    .Theme-1 .wrapper #threecolumnscontainer1 #column-two {
+      width: 97%;
+      left: auto;
+      margin: 0 auto;
+      float: none; }
+    .Theme-1 .wrapper #threecolumnscontainer1 #column-three {
+      width: 97%;
+      left: auto;
+      margin: 0 auto;
+      float: none; }
+      .Theme-1 .wrapper #threecolumnscontainer1 #column-three .helper:first-child {
+        padding: 0; }
+  .Theme-1 .wrapper footer .helper {
+    width: 97%; } }
 
 html, body, h1, h2, h3, p {
   margin: 0;

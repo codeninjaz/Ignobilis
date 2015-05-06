@@ -1,18 +1,23 @@
-﻿@using Ignobilis.Business
+﻿@using EPiServer.Shell
+@using Ignobilis.Business
 @model Ignobilis.Models.Blocks.IB_PuffBlock
 
 
 <div class="puff">
     <strong>@Model.Header</strong>
-    
+
+    @if (Model.Image != null)
+    {
+        <img src="@Url.ContentUrl(Model.Image)"/>
+    }
     <div class="helper">
-        <p>@Model.Description</p>
+        @Model.Description
 
         @if (Model.Links != null)
         {
             foreach (var item in Model.Links.ToPages())
             {
-                <a href="@Html.Raw(item.PageLink.Url())">@item.PageName</a>
+                <a href="@Url.ContentUrl(item.PageLink)">@item.PageName</a>
             }
         }
     </div>

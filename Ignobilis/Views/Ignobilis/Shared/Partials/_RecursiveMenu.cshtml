@@ -1,4 +1,6 @@
-﻿@using EPiServer.Core
+﻿@using EPiServer
+@using EPiServer.Core
+@using EPiServer.ServiceLocation
 @using Ignobilis.Business
 @using Ignobilis.Business.Interfaces
 @model IPageViewModel<Ignobilis.Models.Pages.IB_BasePage>
@@ -19,29 +21,33 @@
         }
     }
 
-    @RecursiveMenuHelper(IgnobilisService.Instance.Settings.Functionality.Menu.Load(pageToLoadFrom, Model.CurrentPage.PageLink))
-
-    @helper RecursiveMenuHelper(List<IRecursiveMenu> menuList, int indentLevel = 0)
+@if ( pageToLoadFrom != PageReference.EmptyReference )
+{ 
+    @RecursiveMenuHelper(IgnobilisService.Instance.Settings.Functionality.Menu.Load(pageToLoadFrom, Model.CurrentPage.PageLink), ServiceLocator.Current.GetInstance<IContentRepository>().Get<PageData>(pageToLoadFrom))
+    @helper RecursiveMenuHelper(List<IRecursiveMenu> menuList, PageData startPage, int indentLevel = 0)
     {
-    <ul>
-        @foreach (var item in menuList)
-        {
-            if (item.IsInChain && item.HaveChildren && item.Level == indentLevel)
-            {
-                <li>
-                    <a href="@item.PageData.PageLink.Url()">@item.PageData.PageName</a>
-                    @RecursiveMenuHelper(menuList.Where(m => m.Level >= item.Level + 1).ToList(), item.Level + 1)
-                </li>
-            }
-            else if (item.Level == indentLevel)
-            {
-                <li>
-                    <a href="@item.PageData.PageLink.Url()">@item.PageData.PageName</a>
-                </li>
-            }
-        }
-    </ul>
+        <div class="recursive-menu">
+            <strong>@startPage.PageName</strong>
+            <ul>
+                @foreach (var item in menuList)
+                {
+                    if (item.IsInChain && item.HaveChildren && item.Level == indentLevel)
+                    {
+                        <li>
+                            <a href="@item.PageData.PageLink.Url()">@item.PageData.PageName</a>
+                            @RecursiveMenuHelper(menuList.Where(m => m.Level >= item.Level + 1).ToList(), startPage, item.Level + 1)
+                        </li>
+                    }
+                    else if (item.Level == indentLevel)
+                    {
+                        <li>
+                            <a href="@item.PageData.PageLink.Url()">@item.PageData.PageName</a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    }
 }
-
 
 
