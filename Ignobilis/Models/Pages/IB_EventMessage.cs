@@ -5,6 +5,7 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Web;
+using Ignobilis.Business.Global;
 
 namespace Ignobilis.Models.Pages
 {
@@ -15,7 +16,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Meddelande",
             Description = "Det meddelande som ska förmedlas vidare",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Content,
             Order = 1)]
         [UIHint(UIHint.Textarea)]
         [Required(ErrorMessage = "Meddelandet måste fyllas i")]
@@ -24,7 +25,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Länk för mer information",
             Description = "Vill man visa ytterligare information så får man följa denna länk",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Content,
             Order = 2)]
         public virtual Url LinkUrl { get; set; }
 
@@ -32,14 +33,14 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Sidan skapad utav sidan",
             Description = "Denna sida har blivit skapad utav ett formulär från denna sida",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Settings,
             Order = 3)]
         public virtual ContentReference Creator { get; set; }
 
         [Display(
             Name = "Visa för grupp",
             Description = "Detta fält används för att meddela en specifik besökargrupp",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Settings,
             Order = 3)]
         public virtual String Group { get; set; }
 
@@ -47,7 +48,7 @@ namespace Ignobilis.Models.Pages
         [Display(
         Name = "Meddelandetyp",
         Description = "Beskrivning vad det är för typ av meddelande",
-        GroupName = SystemTabNames.Content,
+        GroupName = Strings.TabNames.Settings,
         Order = 3)]
         [Required]
         [UIHint(Business.Global.Strings.UIHints.EventMessageType)]

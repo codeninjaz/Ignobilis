@@ -3,6 +3,7 @@ using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
+using Ignobilis.Business.Global;
 
 namespace Ignobilis.Models.Pages
 {
@@ -15,7 +16,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Huvudmeny",
             Description = "Ingångarna för siten",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Settings,
             Order = 3)]
         public virtual LinkItemCollection MainMenu { get; set; }
 
@@ -23,7 +24,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Aktivera den sekundära menyn",
             Description = "Är denna aktiv skapas en menu under huvudmenyn.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Settings,
             Order = 4)]
         public virtual bool IsSecondaryMenuActive { get; set; }
 
@@ -31,14 +32,14 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Aktivera brödsmulor",
             Description = "Är denna aktiv skapas skapas brödsmulor som beskriver vart man är på siten",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Settings,
             Order = 5)]
         public virtual bool IsBreadCrumbsActive { get; set; }
 
         [Display(
             Name = "Puffarea",
             Description = "Area för block vid sidan av innehållet.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Areas,
             Order = 6)]
         [CultureSpecific]
         public virtual ContentArea PuffContentArea { get; set; }
@@ -46,7 +47,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Logoarea",
             Description = "Area för logotyp",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Areas,
             Order = 7)]
         [CultureSpecific]
         public virtual ContentArea LogotypeContentArea { get; set; }
@@ -54,7 +55,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Searcharea",
             Description = "Area för sök",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Areas,
             Order = 8)]
         [CultureSpecific]
         public virtual ContentArea SearchContentArea { get; set; }
@@ -62,7 +63,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Personaliseringsarea",
             Description = "Area för personalisering",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Areas,
             Order = 9)]
         [CultureSpecific]
         public virtual ContentArea PersonalizationContentArea { get; set; }
@@ -70,7 +71,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Visningsläge",
             Description = "3 kolumner, 4 kolumner.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Settings,
             Order = 10)]
         [UIHint(Business.Global.Strings.UIHints.ViewMode)]
         public virtual string ViewMode { get; set; }
@@ -78,7 +79,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Tema",
             Description = "Flashy, theme-1",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Settings,
             Order = 11)]
         [UIHint(Business.Global.Strings.UIHints.Theme)]
         public virtual string Theme { get; set; }
@@ -86,7 +87,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Root för meddelanden",
             Description = "Root för meddelanden som kommer visas på webbplatsen",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Settings,
             Order = 12)]
         public virtual ContentReference EventMessageRoot { get; set; }
 

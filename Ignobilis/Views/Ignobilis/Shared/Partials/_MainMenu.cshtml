@@ -2,18 +2,30 @@
 @using Ignobilis.Models.Pages
 @model IPageViewModel<IB_BasePage>
 
-<nav id="main-menu">
-    <div>
-        @foreach (var item in IgnobilisService.Instance.Settings.Functionality.MainMenu.Load(Model.SettingsPage.MainMenu))
-        {
-            if (IgnobilisService.Instance.Settings.Functionality.MainMenu.LocatedInMenu(Model.CurrentPage, item))
+    <nav id="main-menu">
+        <div>
+            @foreach (var item in IgnobilisService.Instance.Settings.Functionality.MainMenu.Load(Model.SettingsPage.MainMenu))
             {
-                <a class="active" href="@item.PageLink.Url()">@item.Name</a>
+                if (IgnobilisService.Instance.Settings.Functionality.MainMenu.LocatedInMenu(Model.CurrentPage, item))
+                {
+                    <a class="active" href="@item.PageLink.Url()">
+                        <span>@item.Name</span>
+                        @if(item.Property["Puff"] != null){
+                            <br/>
+                            <span>@item.Property["Puff"].Value</span>
+                        }
+                    </a>
+                }
+                else
+                {
+                    <a href="@item.PageLink.Url()">
+                        <span>@item.Name</span>
+                        @if(item.Property["Puff"] != null){
+                            <br />
+                            <span>@item.Property["Puff"].Value</span>
+                        }
+                    </a>
+                }
             }
-            else
-            {
-                <a href="@item.PageLink.Url()">@item.Name</a>
-            }
-        }
-    </div>
-</nav>
+        </div>
+    </nav>

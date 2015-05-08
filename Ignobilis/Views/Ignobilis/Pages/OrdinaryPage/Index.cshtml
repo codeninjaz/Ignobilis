@@ -13,8 +13,7 @@
         <h1 @Html.EditAttributes(x => x.CurrentPage.Headline)>@Model.CurrentPage.Headline</h1>
         <p>@Html.PropertyFor(m => m.CurrentPage.Ingress)</p>
     </header>
-    <div>
-        @Html.PropertyFor(m => m.CurrentPage.Image)
+    <div>        
         @Html.PropertyFor(m => m.CurrentPage.MainBody)
     </div>
 </article>

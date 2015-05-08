@@ -24,5 +24,12 @@ namespace Ignobilis.Business.Global
             public const String ViewMode = "viewmode";
             public const String Theme = "theme";
         }
+
+        public static class TabNames
+        {
+            public const String Content = "Text";
+            public const String Areas = "Areor";
+            public const String Settings = "Justering";
+        }
     }
 }

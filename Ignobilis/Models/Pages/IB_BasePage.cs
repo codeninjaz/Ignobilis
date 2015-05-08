@@ -6,6 +6,7 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using Ignobilis.Business.Attributes;
 using EPiServer.Web;
+using Ignobilis.Business.Global;
 
 namespace Ignobilis.Models.Pages
 {
@@ -18,7 +19,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Rubrik",
             Description = "Visas som rubrik på sidan.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Content,
             Order = 1)]
         public virtual string Headline { get; set; }
 
@@ -26,7 +27,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Huvudeditor",
             Description = "Texten kommer att visas i innehållsdelen på sidan, med hjälp av detta fält kan du infoga exempelvis text, bilder och tabeller.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Content,
             Order = 2)]
         public virtual XhtmlString MainBody { get; set; }
 
@@ -36,7 +37,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Area A",
             Description="Area för block under det vanliga innehållet.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Areas,
             Order = 100)]
         [CultureSpecific]
         public virtual ContentArea ContentAreaA { get; set; }
@@ -44,7 +45,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name="Area B",
             Description = "Area för block till vänster om det vanliga innehållet och under vänsternavigeringen.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Areas,
             Order = 110)]
         [CultureSpecific]
         public virtual ContentArea ContentAreaB { get; set; }
@@ -52,7 +53,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Area C",
             Description = "Area för block till höger om det vanliga innehållet och under högerkolumnens innehåll.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Areas,
             Order = 120)]
         [CultureSpecific]
         public virtual ContentArea ContentAreaC { get; set; }
@@ -60,7 +61,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Area D",
             Description = "Area för block till höger om det vanliga innehållet och under högerkolumnens innehåll.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Areas,
             Order = 130)]
         [CultureSpecific]
         public virtual ContentArea ContentAreaD { get; set; }
@@ -68,7 +69,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Area E",
             Description = "Area för block till höger om det vanliga innehållet och under högerkolumnens innehåll.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Areas,
             Order = 140)]
         [CultureSpecific]
         public virtual ContentArea ContentAreaE { get; set; }
@@ -76,7 +77,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Area F",
             Description = "Area för block till höger om det vanliga innehållet och under högerkolumnens innehåll.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Areas,
             Order = 140)]
         [CultureSpecific]
         public virtual ContentArea ContentAreaF { get; set; }
@@ -84,7 +85,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Footerarea",
             Description = "Area för block under allt övrigt innehåll men innan footern.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Areas,
             Order = 130)]
         [CultureSpecific]
         public virtual ContentArea FooterContentArea { get; set; }
@@ -92,7 +93,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Topparea",
             Description = "Area för block ovanför allt övrigt innehåll men under menyn.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Areas,
             Order = 130)]
         [CultureSpecific]
         public virtual ContentArea TopContentArea { get; set; }
@@ -102,7 +103,7 @@ namespace Ignobilis.Models.Pages
         [Display(
             Name = "Visningsläge",
             Description = "3 kolumner, 4 kolumner.",
-            GroupName = SystemTabNames.Content,
+            GroupName = Strings.TabNames.Settings,
             Order = 7)]
         [UIHint(Business.Global.Strings.UIHints.ViewMode)]
         public virtual string ViewMode { get; set; }
