@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>React - filehandler</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+  <style>
+    body{
+      font-family: 'Open Sans';
+    }
+    .info-box {
+      position        : absolute;
+      top             : 8px;
+      left            : 10px;
+      background-color : #C5DB98;
+      z-index          : 10000;
+      padding         : 10px;
+      border          : solid 1px #333;
+      box-shadow       : 10px 10px 37px -2px rgba(165, 165, 165, 0.34)
+    }
+    .filehandler{
+      width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="float:left" class="filehandler" data-root="1"></div>
+  <div style="float:left" class="filehandler" data-root="2"></div>
+  <div style="float:left" class="filehandler" data-root="3"></div>
+  <div style="float:left" class="filehandler" data-root="4"></div>
+  <script src="http://localhost:8090/webpack-dev-server.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.8.0/lodash.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.2/react-with-addons.min.js"></script>
+  <script src="filehandler.js"></script>
+</body>
+
+</html>

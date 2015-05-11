@@ -19,7 +19,7 @@ namespace Ignobilis.Controllers
                                          BlockGuid = (currentBlock as IContent).ContentGuid
                                      };
 
-            return PartialView("~/Views/Ignobilis/Blocks/UserActivity/index.cshtml", userActivityViewModel);
+            return PartialView("~/Views/Ignobilis/Blocks/UserActivity/index.cshtml", userActivityViewModel); 
         }
     }
 }

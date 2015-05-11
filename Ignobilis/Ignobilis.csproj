@@ -332,6 +332,7 @@
     <Compile Include="Business\Interfaces\IViewMode.cs" />
     <Compile Include="Business\Util.cs" />
     <Compile Include="Controllers\ImageBlockController.cs" />
+    <Compile Include="Controllers\FileHandlerBlockController.cs" />
     <Compile Include="Controllers\UserActivityBlockController.cs" />
     <Compile Include="Controllers\MenuBlockController.cs" />
     <Compile Include="Controllers\ListBlockController.cs" />
@@ -346,6 +347,7 @@
     <Compile Include="Models\Blocks\IB_ImageBlock.cs" />
     <Compile Include="Models\Blocks\IB_EditorialBlock.cs" />
     <Compile Include="Models\Blocks\IB_MenuBlock.cs" />
+    <Compile Include="Models\Blocks\IB_FileHandlerBlock.cs" />
     <Compile Include="Models\Blocks\IB_UserActivityBlock.cs" />
     <Compile Include="Models\Blocks\IB_PuffBlock.cs" />
     <Compile Include="Models\Blocks\IB_ListBlock.cs" />
@@ -361,6 +363,7 @@
     <Compile Include="Models\ViewModels\ListBlockViewModel.cs" />
     <Compile Include="Models\ViewModels\MenuBlockViewModel.cs" />
     <Compile Include="Models\ViewModels\PageViewModel.cs" />
+    <Compile Include="Models\ViewModels\FileHandlerViewModel.cs" />
     <Compile Include="Models\ViewModels\UserActivityViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -394,10 +397,13 @@
     <Content Include="Static\Ignobilis\css\_rotated-flipped.scss" />
     <Content Include="Static\Ignobilis\css\_stacked.scss" />
     <Content Include="Static\Ignobilis\css\_variables.scss" />
+    <Content Include="Static\Ignobilis\Scripts\filehandler\filehandler.js" />
+    <Content Include="Static\Ignobilis\Scripts\filehandler\index.html" />
     <Content Include="Static\Ignobilis\Scripts\generated\app.js.map" />
     <Content Include="Static\Ignobilis\Scripts\generated\vendor.js.map" />
     <Content Include="Static\Ignobilis\css\_theme_2.scss" />
     <Content Include="Static\Ignobilis\css\_theme_3.scss" />
+    <Content Include="Static\Ignobilis\Scripts\filehandler\filehandler.js.map" />
     <None Include="Static\Ignobilis\Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Static\Ignobilis\fonts\fontawesome-webfont.svg" />
     <Content Include="Static\Ignobilis\Scripts\EventMessageHub.js" />
@@ -456,6 +462,7 @@
     <Content Include="Static\Ignobilis\Scripts\react\components\menu\data\menuMockData.json" />
     <Content Include="Views\Ignobilis\Blocks\UserActivity\index.cshtml" />
     <Content Include="Views\Ignobilis\Blocks\Image\index.cshtml" />
+    <Content Include="Views\Ignobilis\Blocks\FileHandler\Index.cshtml" />
     <None Include="_CreateNewNuGetPackage\DoNotModify\NuGet.exe" />
   </ItemGroup>
   <ItemGroup>
@@ -502,12 +509,8 @@
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>REM PowerShell -NoProfile -ExecutionPolicy Bypass -Command "&amp; '$(ProjectDir)
-REM _CreateNewNuGetPackage\DoNotModify\CreateNuGetPackage.ps1' -ProjectFilePath 
-REM '$(ProjectPath)' -OutputDirectory '$(TargetDir)' -BuildConfiguration 
-REM '$(ConfigurationName)' -BuildPlatform '$(PlatformName)'"
-
-xcopy "$(ProjectDir)Static\Ignobilis\css\Base.css" "C:\Users\johobr\Documents\Visual Studio 2012\Projects\TFS\InsiktenUtsikten\Main_epi8\Source\InsiktenUtsikten\Static\Ignobilis\css\Base.css" /Y /I</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>
