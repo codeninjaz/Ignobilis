@@ -11,15 +11,17 @@ namespace Ignobilis.Controllers
         public override ActionResult Index(IB_FileHandler currentBlock)
         {
             var content = currentBlock as IContent;
-            if (content != null)
+            
+            if (content == null) return null;
+            
+            var fileHandlerViewModel = new FileHandlerViewModel
             {
-                var fileHandlerViewModel = new FileHandlerViewModel
-                {
-                    BlockGuid = content.ContentGuid
-                };
+                BlockGuid = content.ContentGuid,
+                ApiUrl = currentBlock.Api,
+                RootFolderId = currentBlock.RootFolderId
+            };
 
-                return PartialView("~/Views/Ignobilis/Blocks/FileHandler/index.cshtml", fileHandlerViewModel);
-            }
+            return PartialView("~/Views/Ignobilis/Blocks/FileHandler/index.cshtml", fileHandlerViewModel);
         }
     }
 }
