@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using EPiServer.Core;
-using EPiServer.HtmlParsing;
 
 namespace Ignobilis.Business.Interfaces
 {

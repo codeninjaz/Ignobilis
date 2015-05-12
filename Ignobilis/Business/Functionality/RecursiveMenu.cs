@@ -4,7 +4,6 @@ using EPiServer;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
 using Ignobilis.Business.Interfaces;
-using Ignobilis.Models.Pages;
 
 namespace Ignobilis.Business.Functionality
 {

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Net;
 using System.ServiceModel.Syndication;
 using System.Xml;
-using EPiServer.DataAbstraction;
 using EPiServer.SpecializedProperties;
 using Ignobilis.Business.Interfaces;
 using Ignobilis.Models.Data;

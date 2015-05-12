@@ -18,7 +18,7 @@ namespace Ignobilis.Controllers
             {
                 BlockGuid = content.ContentGuid,
                 ApiUrl = currentBlock.Api,
-                RootFolderId = currentBlock.RootFolderId
+                RootFolder = currentBlock.RootFolder
             };
 
             return PartialView("~/Views/Ignobilis/Blocks/FileHandler/index.cshtml", fileHandlerViewModel);

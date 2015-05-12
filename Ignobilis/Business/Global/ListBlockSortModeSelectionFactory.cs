@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using EPiServer.Shell.ObjectEditing;
-using SelectItem = EPiServer.Shell.ObjectEditing.SelectItem;
 
 namespace Ignobilis.Business.Global
 {

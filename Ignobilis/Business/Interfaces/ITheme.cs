@@ -1,5 +1,4 @@
-﻿using System.Web;
-using Ignobilis.Models.Pages;
+﻿using Ignobilis.Models.Pages;
 
 namespace Ignobilis.Business.Interfaces
 {

@@ -1,11 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using EPiServer;
-using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using EPiServer.Shell.ObjectEditing;
 using EPiServer.SpecializedProperties;
+using Ignobilis.Business.Global;
 
 namespace Ignobilis.Models.Blocks
 {
@@ -42,7 +40,7 @@ namespace Ignobilis.Models.Blocks
         Description = "Visningsläge för listningen",
         GroupName = SystemTabNames.Settings,
         Order = 2)]
-        [UIHint(Business.Global.Strings.UIHints.ListBlockLayout)]
+        [UIHint(Strings.UIHints.ListBlockLayout)]
         public virtual String Layout { get; set; }
 
         [Display(
@@ -50,7 +48,7 @@ namespace Ignobilis.Models.Blocks
             Description = "Vad ska listan sorteras på?",
             GroupName = SystemTabNames.Settings,
             Order = 1)]
-        [UIHint(Business.Global.Strings.UIHints.ListBlockSortMode)]
+        [UIHint(Strings.UIHints.ListBlockSortMode)]
         public virtual String SortMode { get; set; }
 
         [Display(
@@ -58,7 +56,7 @@ namespace Ignobilis.Models.Blocks
             Description = "Hur ska innehållet sorteras?",
             GroupName = SystemTabNames.Settings,
             Order = 2)]
-        [UIHint(Business.Global.Strings.UIHints.ListBlockSorting)]
+        [UIHint(Strings.UIHints.ListBlockSorting)]
         public virtual String Sorting { get; set; }
 
         [Display(

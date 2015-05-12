@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Castle.Core.Internal;
 using EPiServer;
-using EPiServer.ClientScript;
-using EPiServer.Cms.Shell;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
 using Ignobilis.Business.Api;
 using Ignobilis.Business.Global;
 using Ignobilis.Business.Interfaces;
 using Ignobilis.Models.Pages;
-using Microsoft.AspNet.SignalR;
 
 namespace Ignobilis.Business.Functionality
 {

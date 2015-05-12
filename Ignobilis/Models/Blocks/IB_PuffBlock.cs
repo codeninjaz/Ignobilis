@@ -5,6 +5,7 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
 using EPiServer.Web;
+using Ignobilis.Business.Global;
 
 namespace Ignobilis.Models.Blocks
 {
@@ -42,7 +43,7 @@ namespace Ignobilis.Models.Blocks
             Description = "Vad är detta för typ av puff?",
             GroupName = SystemTabNames.Content,
             Order = 4)]
-        [UIHint(Business.Global.Strings.UIHints.EventMessageType)]
+        [UIHint(Strings.UIHints.EventMessageType)]
         public virtual String PuffType { get; set; }
     }
 }

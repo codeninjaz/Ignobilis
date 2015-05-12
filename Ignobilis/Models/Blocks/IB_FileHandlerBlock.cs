@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 
@@ -15,10 +16,10 @@ namespace Ignobilis.Models.Blocks
         public virtual string Api { get; set; }
 
         [Display(
-            Name = "Id för rotkatalog",
-            Description = "Id för rotkatalogen (beror på API)",
+            Name = "Rotkatalog",
+            Description = "Länk till rotkatalog",
             GroupName = SystemTabNames.Settings,
             Order = 1)]
-        public virtual string RootFolderId { get; set; }
+        public virtual ContentReference RootFolder { get; set; }
     }
 }

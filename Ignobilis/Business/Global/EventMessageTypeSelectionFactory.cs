@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using EPiServer.Shell.ObjectEditing;
-using EPiServer.XForms.WebControls;
-using SelectItem = EPiServer.Shell.ObjectEditing.SelectItem;
 
 namespace Ignobilis.Business.Global
 {

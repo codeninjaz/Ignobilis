@@ -1,5 +1,4 @@
 ﻿using EPiServer.DataAnnotations;
-using Ignobilis.Business.Attributes;
 
 namespace Ignobilis.Models.Pages
 {

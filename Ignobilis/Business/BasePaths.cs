@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using EPiServer.UI.Report;
 using Ignobilis.Business.Interfaces;
 
 namespace Ignobilis.Business

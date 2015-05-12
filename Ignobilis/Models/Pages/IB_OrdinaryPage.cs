@@ -1,9 +1,6 @@
-﻿using EPiServer.Core;
-using EPiServer.DataAbstraction;
+﻿using System.ComponentModel.DataAnnotations;
 using EPiServer.DataAnnotations;
 using EPiServer.Web;
-using Ignobilis.Business.Attributes;
-using System.ComponentModel.DataAnnotations;
 using Ignobilis.Business.Global;
 
 namespace Ignobilis.Models.Pages
