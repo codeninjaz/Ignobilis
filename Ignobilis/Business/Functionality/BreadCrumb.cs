@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Web.UI;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;

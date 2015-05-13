@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Net;
-using System.Text;
-using System.Web;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.ServiceLocation;
 using EPiServer.Web.Routing;
+using HtmlAgilityPack;
 using Ignobilis.Business.Interfaces;
 using Ignobilis.Models.Pages;
 
@@ -26,7 +24,7 @@ namespace Ignobilis.Models.Data
                
                 if (propertyValue != null)
                 {
-                    var htmlDoc = new HtmlAgilityPack.HtmlDocument();
+                    var htmlDoc = new HtmlDocument();
                     htmlDoc.LoadHtml(propertyValue);
                     var node = htmlDoc.DocumentNode.SelectSingleNode("//p");
 

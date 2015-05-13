@@ -3,6 +3,7 @@ using Microsoft.AspNet.SignalR;
 using Microsoft.Owin;
 using Owin;
 using System.Web.Http;
+
 [assembly: OwinStartup(typeof(Startup))]
 
 namespace Ignobilis.Business.Initializers

@@ -202,8 +202,8 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="NuGet.Core, Version=2.5.40416.9020, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -220,8 +220,13 @@
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+
     </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
@@ -239,12 +244,21 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+
     </Reference>
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>False</Private>
@@ -294,6 +308,7 @@
     <Compile Include="Business\Api\UserActivityHub.cs" />
     <Compile Include="Business\Attributes\ContentSelectionAttribute.cs" />
     <Compile Include="Business\BaseFunctionality.cs" />
+    <Compile Include="Business\Extensions\StringExtensions.cs" />
     <Compile Include="Business\Functionality\Blocks.cs" />
     <Compile Include="Business\Functionality\BreadCrumb.cs" />
     <Compile Include="Business\Functionality\ExternalList.cs" />
@@ -345,7 +360,9 @@
     <Compile Include="Business\Interfaces\ITheme.cs" />
     <Compile Include="Business\Interfaces\IViewMode.cs" />
     <Compile Include="Business\Util.cs" />
+    <Compile Include="Controllers\FileManagement.cs" />
     <Compile Include="Controllers\ImageBlockController.cs" />
+    <Compile Include="Controllers\FileHandlerBlockController.cs" />
     <Compile Include="Controllers\UserActivityBlockController.cs" />
     <Compile Include="Controllers\MenuBlockController.cs" />
     <Compile Include="Controllers\ListBlockController.cs" />
@@ -360,6 +377,7 @@
     <Compile Include="Models\Blocks\IB_ImageBlock.cs" />
     <Compile Include="Models\Blocks\IB_EditorialBlock.cs" />
     <Compile Include="Models\Blocks\IB_MenuBlock.cs" />
+    <Compile Include="Models\Blocks\IB_FileHandlerBlock.cs" />
     <Compile Include="Models\Blocks\IB_UserActivityBlock.cs" />
     <Compile Include="Models\Blocks\IB_PuffBlock.cs" />
     <Compile Include="Models\Blocks\IB_ListBlock.cs" />
@@ -375,10 +393,12 @@
     <Compile Include="Models\ViewModels\ListBlockViewModel.cs" />
     <Compile Include="Models\ViewModels\MenuBlockViewModel.cs" />
     <Compile Include="Models\ViewModels\PageViewModel.cs" />
+    <Compile Include="Models\ViewModels\FileHandlerViewModel.cs" />
     <Compile Include="Models\ViewModels\UserActivityViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Start\" />
     <Folder Include="Models\Media\" />
     <Folder Include="Models\Properties\" />
   </ItemGroup>
@@ -408,10 +428,13 @@
     <Content Include="Static\Ignobilis\css\_rotated-flipped.scss" />
     <Content Include="Static\Ignobilis\css\_stacked.scss" />
     <Content Include="Static\Ignobilis\css\_variables.scss" />
+    <Content Include="Static\Ignobilis\Scripts\filehandler\filehandler.js" />
+    <Content Include="Static\Ignobilis\Scripts\filehandler\index.html" />
     <Content Include="Static\Ignobilis\Scripts\generated\app.js.map" />
     <Content Include="Static\Ignobilis\Scripts\generated\vendor.js.map" />
     <Content Include="Static\Ignobilis\css\_theme_2.scss" />
     <Content Include="Static\Ignobilis\css\_theme_3.scss" />
+    <Content Include="Static\Ignobilis\Scripts\filehandler\filehandler.js.map" />
     <None Include="Static\Ignobilis\Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Static\Ignobilis\fonts\fontawesome-webfont.svg" />
     <Content Include="Static\Ignobilis\Scripts\EventMessageHub.js" />
@@ -470,6 +493,10 @@
     <Content Include="Static\Ignobilis\Scripts\react\components\menu\data\menuMockData.json" />
     <Content Include="Views\Ignobilis\Blocks\UserActivity\index.cshtml" />
     <Content Include="Views\Ignobilis\Blocks\Image\index.cshtml" />
+<<<<<<< HEAD
+=======
+    <Content Include="Views\Ignobilis\Blocks\FileHandler\Index.cshtml" />
+>>>>>>> 415d95977cfdf4298289fa2a81f9bbe60f82593d
     <Content Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -523,12 +550,16 @@
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <PropertyGroup>
+
     <PostBuildEvent>REM PowerShell -NoProfile -ExecutionPolicy Bypass -Command "&amp; '$(ProjectDir)
 REM _CreateNewNuGetPackage\DoNotModify\CreateNuGetPackage.ps1' -ProjectFilePath 
 REM '$(ProjectPath)' -OutputDirectory '$(TargetDir)' -BuildConfiguration 
 REM '$(ConfigurationName)' -BuildPlatform '$(PlatformName)'"
 
 REM xcopy "$(ProjectDir)Static\Ignobilis\css\Base.css" "C:\Users\johobr\Documents\Visual Studio 2012\Projects\TFS\InsiktenUtsikten\Main_epi8\Source\InsiktenUtsikten\Static\Ignobilis\css\Base.css" /Y /I</PostBuildEvent>
+
+    <PostBuildEvent>copy /Y "$(TargetDir)$(TargetName).*" "c:\TFS\Insikten\Main_epi8\Source\InsiktenUtsikten\bin"</PostBuildEvent>
+
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>

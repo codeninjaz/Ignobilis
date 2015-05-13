@@ -1,10 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
-using EPiServer;
+﻿using System.Web.Mvc;
 using EPiServer.Core;
 using EPiServer.Web.Mvc;
-using Ignobilis.Business;
 using Ignobilis.Models.Blocks;
 using Ignobilis.Models.ViewModels;
 
@@ -19,7 +15,7 @@ namespace Ignobilis.Controllers
                                          BlockGuid = (currentBlock as IContent).ContentGuid
                                      };
 
-            return PartialView("~/Views/Ignobilis/Blocks/UserActivity/index.cshtml", userActivityViewModel);
+            return PartialView("~/Views/Ignobilis/Blocks/UserActivity/index.cshtml", userActivityViewModel); 
         }
     }
 }

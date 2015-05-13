@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using EPiServer.Core;
-using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
 using Ignobilis.Business.Global;
@@ -73,7 +72,7 @@ namespace Ignobilis.Models.Pages
             Description = "3 kolumner, 4 kolumner.",
             GroupName = Strings.TabNames.Settings,
             Order = 10)]
-        [UIHint(Business.Global.Strings.UIHints.ViewMode)]
+        [UIHint(Strings.UIHints.ViewMode)]
         public virtual string ViewMode { get; set; }
 
         [Display(
@@ -81,7 +80,7 @@ namespace Ignobilis.Models.Pages
             Description = "Flashy, theme-1",
             GroupName = Strings.TabNames.Settings,
             Order = 11)]
-        [UIHint(Business.Global.Strings.UIHints.Theme)]
+        [UIHint(Strings.UIHints.Theme)]
         public virtual string Theme { get; set; }
 
         [Display(

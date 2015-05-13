@@ -4,7 +4,6 @@ using EPiServer;
 using EPiServer.Core;
 using EPiServer.Personalization;
 using EPiServer.ServiceLocation;
-using Ignobilis.Business;
 using Ignobilis.Business.Global;
 using Ignobilis.Business.Interfaces;
 using Ignobilis.Models.Pages;

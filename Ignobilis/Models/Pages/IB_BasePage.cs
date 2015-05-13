@@ -1,11 +1,6 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using EPiServer;
+﻿using System.ComponentModel.DataAnnotations;
 using EPiServer.Core;
-using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using Ignobilis.Business.Attributes;
-using EPiServer.Web;
 using Ignobilis.Business.Global;
 
 namespace Ignobilis.Models.Pages
@@ -105,7 +100,7 @@ namespace Ignobilis.Models.Pages
             Description = "3 kolumner, 4 kolumner.",
             GroupName = Strings.TabNames.Settings,
             Order = 7)]
-        [UIHint(Business.Global.Strings.UIHints.ViewMode)]
+        [UIHint(Strings.UIHints.ViewMode)]
         public virtual string ViewMode { get; set; }
 
     }

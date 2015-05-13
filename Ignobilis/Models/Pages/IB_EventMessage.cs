@@ -2,7 +2,6 @@
 using System.ComponentModel.DataAnnotations;
 using EPiServer;
 using EPiServer.Core;
-using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.Web;
 using Ignobilis.Business.Global;
@@ -51,7 +50,7 @@ namespace Ignobilis.Models.Pages
         GroupName = Strings.TabNames.Settings,
         Order = 3)]
         [Required]
-        [UIHint(Business.Global.Strings.UIHints.EventMessageType)]
+        [UIHint(Strings.UIHints.EventMessageType)]
         public virtual String Type { get; set; }
 
     }
