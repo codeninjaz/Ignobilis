@@ -493,10 +493,7 @@
     <Content Include="Static\Ignobilis\Scripts\react\components\menu\data\menuMockData.json" />
     <Content Include="Views\Ignobilis\Blocks\UserActivity\index.cshtml" />
     <Content Include="Views\Ignobilis\Blocks\Image\index.cshtml" />
-<<<<<<< HEAD
-=======
     <Content Include="Views\Ignobilis\Blocks\FileHandler\Index.cshtml" />
->>>>>>> 415d95977cfdf4298289fa2a81f9bbe60f82593d
     <Content Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
