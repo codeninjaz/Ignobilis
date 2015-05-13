@@ -2241,9 +2241,9 @@ th {
         background-image: linear-gradient(to bottom, white, white 1%, #bcdb7f 5%);
         padding-right: 12px;
         padding-left: 12px;
-        border-top: #7ab800 1px solid;
-        border-left: #7ab800 1px solid;
-        border-right: #7ab800 1px solid; }
+        border: #7ab800 1px solid;
+        margin-right: 3px;
+        bottom: 2px; }
       .Theme-1 .wrapper #main-menu div a.active {
         background-color: white;
         background-image: none;
@@ -2251,7 +2251,7 @@ th {
         padding-top: 10px;
         padding-right: 16px;
         padding-left: 16px;
-        bottom: 7px;
+        bottom: 6px;
         font-weight: bold;
         border-bottom: 1px solid white; }
   .Theme-1 .wrapper #secondary-menu {
@@ -2273,7 +2273,8 @@ th {
         padding-right: 10px;
         background-color: #eaeaea;
         border: #bfbfbf 1px solid;
-        margin-left: 0; }
+        margin-left: 0;
+        bottom: 2px; }
       .Theme-1 .wrapper #secondary-menu div a.active {
         background-image: none;
         background-color: white;
@@ -2281,7 +2282,7 @@ th {
         padding-top: 8px;
         padding-bottom: 8px;
         padding-left: 14px;
-        bottom: 3px;
+        bottom: 4px;
         padding-right: 14px;
         border-bottom: 1px solid white; }
   .Theme-1 .wrapper #breadcrumb {
@@ -2375,7 +2376,8 @@ th {
       .Theme-1 .wrapper .recursive-menu ul li a {
         text-decoration: none;
         color: black;
-        line-height: 30px; }
+        line-height: 30px;
+        padding-left: 12px; }
     .Theme-1 .wrapper .recursive-menu ul li:last-child {
       border-bottom: 0; }
   .Theme-1 .wrapper .image-block img {

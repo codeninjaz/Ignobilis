@@ -2,6 +2,7 @@
 using Microsoft.AspNet.SignalR;
 using Microsoft.Owin;
 using Owin;
+using System.Web.Http;
 [assembly: OwinStartup(typeof(Startup))]
 
 namespace Ignobilis.Business.Initializers
@@ -13,6 +14,12 @@ namespace Ignobilis.Business.Initializers
             var sqlConnectionString = IgnobilisService.Instance.Settings.ConnectionString;
             GlobalHost.DependencyResolver.UseSqlServer(sqlConnectionString);
             app.MapSignalR();
+            
+
+            GlobalConfiguration.Configure(config =>
+                                          {
+                                              config.MapHttpAttributeRoutes();
+                                          });
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿@using Ignobilis.Business
+﻿@using EPiServer.Core
+@using Ignobilis.Business
 @using Ignobilis.Models.Pages
 @model IPageViewModel<IB_BasePage>
 
@@ -10,7 +11,8 @@
                 {
                     <a class="active" href="@item.PageLink.Url()">
                         <span>@item.Name</span>
-                        @if(item.Property["Puff"] != null){
+                        @if (item.Property["Puff"].Value != null) 
+                        {
                             <br/>
                             <span>@item.Property["Puff"].Value</span>
                         }
@@ -20,7 +22,8 @@
                 {
                     <a href="@item.PageLink.Url()">
                         <span>@item.Name</span>
-                        @if(item.Property["Puff"] != null){
+                        @if (item.Property["Puff"].Value != null)
+                        {
                             <br />
                             <span>@item.Property["Puff"].Value</span>
                         }
